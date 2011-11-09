@@ -1,7 +1,0 @@
-C:\Users\Julian Ceipek\Development\Piano-Prototype\PianoPrototype\PianoPrototype\PianoPrototype\bin\x86\Debug\PianoPrototype.exe
-C:\Users\Julian Ceipek\Development\Piano-Prototype\PianoPrototype\PianoPrototype\PianoPrototype\bin\x86\Debug\PianoPrototype.pdb
-C:\Users\Julian Ceipek\Development\Piano-Prototype\PianoPrototype\PianoPrototype\PianoPrototype\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Julian Ceipek\Development\Piano-Prototype\PianoPrototype\PianoPrototype\PianoPrototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\Julian Ceipek\Development\Piano-Prototype\PianoPrototype\PianoPrototype\PianoPrototype\obj\x86\Debug\PianoPrototype.exe
-C:\Users\Julian Ceipek\Development\Piano-Prototype\PianoPrototype\PianoPrototype\PianoPrototype\obj\x86\Debug\PianoPrototype.pdb
-C:\Users\Julian Ceipek\Development\Piano-Prototype\PianoPrototype\PianoPrototype\PianoPrototype\bin\x86\Debug\Content\note.xnb
