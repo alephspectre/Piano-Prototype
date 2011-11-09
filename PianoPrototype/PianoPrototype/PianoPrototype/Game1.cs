@@ -34,7 +34,7 @@ namespace PianoPrototype
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            Console.WriteLine("Hello World!");
             base.Initialize();
         }
 
