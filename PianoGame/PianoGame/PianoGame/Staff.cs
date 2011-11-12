@@ -87,11 +87,26 @@ namespace PianoGame
             }
 
             musicTime = MediaPlayer.PlayPosition.TotalMilliseconds;
+            if (noteList.Count > 0)
+            {
+
+                while ((float)musicTime > noteList[currentIndex].position.X && (currentIndex < noteList.Count - 1)) 
+                    {
+                        currentIndex++;
+                        Console.WriteLine(currentIndex);
+                    }
+            }
 
             KeyboardState kb = Keyboard.GetState();
             if (kb.IsKeyDown(Keys.A))
             {
                 Console.WriteLine("A KEY DOWN");
+                foreach (Note note in GetCurrentNotes())
+                {
+                    if (Math.Abs(note.position.X - (float)musicTime) < 200.0f) {
+                        note.visible = false;
+                    }
+                }
             }
 
             //Console.WriteLine(musicTime);
