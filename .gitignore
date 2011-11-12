@@ -1,5 +1,8 @@
-/bin
-/obj
+PianoGame/PianoGame/PianoGame/bin/
+PianoGame/PianoGame/PianoGame/bin/
+PianoGame/PianoGame/PianoGame/obj/
 *.user
 *.suo
 *.sln.cache
+PianoGame/PianoGame/PianoGame/PianoGame.csproj.Debug.cachefile
+PianoGame/PianoGame/PianoGameContent/obj/
