@@ -52,11 +52,34 @@ namespace PianoGame
 
 
             staff = new Staff();
-            Note a = new Note(new Vector2(2000.0f, 720.0f - 286.0f - 220.0f), 0.0f, 0.0f, 0, 0);
-            Note b = new Note(new Vector2(5000.0f, 720.0f - 286.0f - 220.0f), 0.0f, 0.0f, 0, 0);
+            Note a = new Note(new Vector2(2000.0f + 00f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, 0); //new Vector2(abs time, height in pixels)
+            Note b = new Note(new Vector2(2000.0f + 300f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, 0);
+            Note c = new Note(new Vector2(2000.0f + 600f, 720.0f - 286.0f - 220.0f - 1.5f * 55.0f), 0.0f, 0.0f, 0, 0);
+            Note d = new Note(new Vector2(2000.0f + 900f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, 0);
+            //mi mi mi
+            Note e = new Note(new Vector2(2500.0f + 1200f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, 0);
+            Note f = new Note(new Vector2(2500.0f + 1500f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, 0);
+            Note g = new Note(new Vector2(2500.0f + 1800f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, 0);
+            // re re re
+            Note h = new Note(new Vector2(3000.0f + 2100f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, 0);
+            Note i = new Note(new Vector2(3000.0f + 2400f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, 0);
+            Note j = new Note(new Vector2(3000.0f + 2700, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, 0);
+            // mi mi mi
+            Note k = new Note(new Vector2(3500.0f + 3000f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, 0);
+            Note l = new Note(new Vector2(3500.0f + 3300, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, 0);
+            Note m = new Note(new Vector2(3500.0f + 3600f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, 0);
 
             staff.AddNote(a);
             staff.AddNote(b);
+            staff.AddNote(c);
+            staff.AddNote(d);
+            staff.AddNote(e);
+            staff.AddNote(f);
+            staff.AddNote(g);
+            staff.AddNote(h);
+            staff.AddNote(i);
+            staff.AddNote(j);
+            staff.AddNote(k);
             base.Initialize();
         }
 
