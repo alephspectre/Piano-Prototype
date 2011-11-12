@@ -17,9 +17,11 @@ namespace PianoGame
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
+
         SpriteBatch spriteBatch;
 
         Texture2D noteTex;
+        Texture2D staffTex;
         Song aSong;
 
         Staff staff;
@@ -40,9 +42,19 @@ namespace PianoGame
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            //Set the screen height and width       
+            graphics.PreferredBackBufferWidth = 1280;
+            graphics.PreferredBackBufferHeight = 720;
+            
+
+            //Apply the changes made to the device
+            graphics.ApplyChanges();
+
+
             staff = new Staff();
-            Note a = new Note(new Vector2(2000.0f, 0.0f), 0.0f, 0.0f, 0, 0);
-            Note b = new Note(new Vector2(5000.0f, 100.0f), 0.0f, 0.0f, 0, 0);
+            Note a = new Note(new Vector2(2000.0f, 720.0f - 286.0f - 220.0f), 0.0f, 0.0f, 0, 0);
+            Note b = new Note(new Vector2(5000.0f, 720.0f - 286.0f - 220.0f), 0.0f, 0.0f, 0, 0);
+
             staff.AddNote(a);
             staff.AddNote(b);
             base.Initialize();
@@ -56,6 +68,7 @@ namespace PianoGame
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            staffTex = Content.Load<Texture2D>("staff");
             noteTex = Content.Load<Texture2D>("note");
             // TODO: use this.Content to load your game content here
 
@@ -99,10 +112,11 @@ namespace PianoGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.White);
 
             // TODO: Add your drawing code here
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
+            spriteBatch.Draw(staffTex, Vector2.Zero, Color.White);
             DrawNotes();
             spriteBatch.End();
             base.Draw(gameTime);
