@@ -1,0 +1,16 @@
+C:\Users\jwu1\Piano-Prototype\CSharpMidiToolkitV5_demo\SequencerDemo\bin\Debug\SequencerDemo.exe
+C:\Users\jwu1\Piano-Prototype\CSharpMidiToolkitV5_demo\SequencerDemo\bin\Debug\SequencerDemo.pdb
+C:\Users\jwu1\Piano-Prototype\CSharpMidiToolkitV5_demo\SequencerDemo\bin\Debug\Sanford.Collections.dll
+C:\Users\jwu1\Piano-Prototype\CSharpMidiToolkitV5_demo\SequencerDemo\bin\Debug\Sanford.Multimedia.dll
+C:\Users\jwu1\Piano-Prototype\CSharpMidiToolkitV5_demo\SequencerDemo\bin\Debug\Sanford.Multimedia.Midi.dll
+C:\Users\jwu1\Piano-Prototype\CSharpMidiToolkitV5_demo\SequencerDemo\bin\Debug\Sanford.Multimedia.Timers.dll
+C:\Users\jwu1\Piano-Prototype\CSharpMidiToolkitV5_demo\SequencerDemo\bin\Debug\Sanford.Threading.dll
+C:\Users\jwu1\Piano-Prototype\CSharpMidiToolkitV5_demo\SequencerDemo\bin\Debug\Sanford.Multimedia.Midi.pdb
+C:\Users\jwu1\Piano-Prototype\CSharpMidiToolkitV5_demo\SequencerDemo\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\jwu1\Piano-Prototype\CSharpMidiToolkitV5_demo\SequencerDemo\obj\Debug\SequencerDemo.AboutDialog.resources
+C:\Users\jwu1\Piano-Prototype\CSharpMidiToolkitV5_demo\SequencerDemo\obj\Debug\SequencerDemo.Form1.resources
+C:\Users\jwu1\Piano-Prototype\CSharpMidiToolkitV5_demo\SequencerDemo\obj\Debug\SequencerDemo.Properties.Resources.resources
+C:\Users\jwu1\Piano-Prototype\CSharpMidiToolkitV5_demo\SequencerDemo\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\jwu1\Piano-Prototype\CSharpMidiToolkitV5_demo\SequencerDemo\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\jwu1\Piano-Prototype\CSharpMidiToolkitV5_demo\SequencerDemo\obj\Debug\SequencerDemo.exe
+C:\Users\jwu1\Piano-Prototype\CSharpMidiToolkitV5_demo\SequencerDemo\obj\Debug\SequencerDemo.pdb

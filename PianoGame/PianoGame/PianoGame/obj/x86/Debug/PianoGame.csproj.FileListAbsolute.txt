@@ -1,0 +1,7 @@
+C:\Users\jwu1\Piano-Prototype\PianoGame\PianoGame\PianoGame\bin\x86\Debug\Content\note.xnb
+C:\Users\jwu1\Piano-Prototype\PianoGame\PianoGame\PianoGame\bin\x86\Debug\PianoGame.exe
+C:\Users\jwu1\Piano-Prototype\PianoGame\PianoGame\PianoGame\bin\x86\Debug\PianoGame.pdb
+C:\Users\jwu1\Piano-Prototype\PianoGame\PianoGame\PianoGame\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\jwu1\Piano-Prototype\PianoGame\PianoGame\PianoGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\jwu1\Piano-Prototype\PianoGame\PianoGame\PianoGame\obj\x86\Debug\PianoGame.exe
+C:\Users\jwu1\Piano-Prototype\PianoGame\PianoGame\PianoGame\obj\x86\Debug\PianoGame.pdb
