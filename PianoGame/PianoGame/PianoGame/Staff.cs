@@ -44,7 +44,7 @@ namespace PianoGame
             leftTimeSpan = 10.0f;
             rightTimeSpan = 30.0f;
 
-            speedFactor = 0.2f;
+            speedFactor = 0.4f;
             pointerLoc = 30.0f;
         }
 
