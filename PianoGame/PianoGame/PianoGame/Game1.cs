@@ -38,6 +38,11 @@ namespace PianoGame
             base.Initialize();
         }
 
+        Texture2D noteTex;
+        Vector2 notePos = Vector2.Zero;
+
+        Vector2 noteSpeed = new Vector2(50.0f, 0.0f);
+
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
@@ -46,8 +51,9 @@ namespace PianoGame
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            noteTex = Content.Load<Texture2D>("note");
             // TODO: use this.Content to load your game content here
+
         }
 
         /// <summary>
@@ -71,7 +77,7 @@ namespace PianoGame
                 this.Exit();
 
             // TODO: Add your update logic here
-
+            
             base.Update(gameTime);
         }
 
@@ -84,7 +90,9 @@ namespace PianoGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
+            spriteBatch.Draw(noteTex, notePos, Color.White);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
