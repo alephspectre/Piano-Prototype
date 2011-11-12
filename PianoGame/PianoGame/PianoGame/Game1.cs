@@ -19,6 +19,11 @@ namespace PianoGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        Texture2D noteTex;
+
+        Note a;
+        Note b;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -34,14 +39,10 @@ namespace PianoGame
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            a = new Note(new Vector2(0.0f, 0.0f), 0.0f, 0.0f, 0, 0);
+            b = new Note(new Vector2(0.0f, 20.0f), 0.0f, 0.0f, 0, 0);
             base.Initialize();
         }
-
-        Texture2D noteTex;
-        Vector2 notePos = Vector2.Zero;
-
-        Vector2 noteSpeed = new Vector2(50.0f, 0.0f);
 
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
@@ -91,9 +92,22 @@ namespace PianoGame
 
             // TODO: Add your drawing code here
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
-            spriteBatch.Draw(noteTex, notePos, Color.White);
+            DrawNote(a);
+            DrawNote(b);
             spriteBatch.End();
             base.Draw(gameTime);
+        }
+
+        public void DrawNote(Note note)
+        {
+            Texture2D tex;
+            switch (note.type)
+            {
+                default:
+                    tex = noteTex;
+                    break;
+            }
+            spriteBatch.Draw(tex, note.position, Color.White);
         }
     }
 }

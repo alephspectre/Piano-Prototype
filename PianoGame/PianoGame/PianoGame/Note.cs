@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace PianoGame
 {
-    class Note
+    public class Note
     {
         public Vector2 position; //The position consists of a y position and a time
         public float leftRange;
