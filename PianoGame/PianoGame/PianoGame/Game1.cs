@@ -41,8 +41,8 @@ namespace PianoGame
         {
             // TODO: Add your initialization logic here
             staff = new Staff();
-            Note a = new Note(new Vector2(0.0f, 0.0f), 0.0f, 0.0f, 0, 0);
-            Note b = new Note(new Vector2(0.0f, 100.0f), 0.0f, 0.0f, 0, 0);
+            Note a = new Note(new Vector2(2000.0f, 0.0f), 0.0f, 0.0f, 0, 0);
+            Note b = new Note(new Vector2(5000.0f, 100.0f), 0.0f, 0.0f, 0, 0);
             staff.AddNote(a);
             staff.AddNote(b);
             base.Initialize();
@@ -83,10 +83,12 @@ namespace PianoGame
                 this.Exit();
 
             // TODO: Add your update logic here
-            if (aSong != null && staff.status == 0) { 
+            if (aSong != null && staff.status == (byte)SongStatus.loading)
+            { 
                 staff.PlayMusic(aSong);
-                staff.status = 1;
             }
+
+            staff.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -123,7 +125,9 @@ namespace PianoGame
                     tex = noteTex;
                     break;
             }
-            spriteBatch.Draw(tex, note.position, Color.White);
+
+            Vector2 newPos = new Vector2(staff.GetNoteX(note.position.X), note.position.Y);
+            spriteBatch.Draw(tex, newPos, Color.White);
         }
     }
 }
