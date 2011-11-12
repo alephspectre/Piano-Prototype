@@ -13,6 +13,7 @@ namespace PianoGame
         public float rightRange; //
         public byte type; //The type of the note determines the image associated with it
         public byte keyToPress; //The correct key associated with this note
+        public bool visible = true;
         public Note(Vector2 pos, float lR, float rR, byte tpe, byte kTP)
         {
             position = pos;
