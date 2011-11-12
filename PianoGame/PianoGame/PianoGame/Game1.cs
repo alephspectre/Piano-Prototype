@@ -21,13 +21,14 @@ namespace PianoGame
 
         Texture2D noteTex;
 
-        Note a;
-        Note b;
+        Staff staff;
+        Song aSong;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
         }
 
         /// <summary>
@@ -39,8 +40,12 @@ namespace PianoGame
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            a = new Note(new Vector2(0.0f, 0.0f), 0.0f, 0.0f, 0, 0);
-            b = new Note(new Vector2(0.0f, 20.0f), 0.0f, 0.0f, 0, 0);
+            MediaPlayer.Play(aSong);
+            staff = new Staff();
+            Note a = new Note(new Vector2(0.0f, 0.0f), 0.0f, 0.0f, 0, 0);
+            Note b = new Note(new Vector2(0.0f, 100.0f), 0.0f, 0.0f, 0, 0);
+            staff.AddNote(a);
+            staff.AddNote(b);
             base.Initialize();
         }
 
@@ -55,6 +60,7 @@ namespace PianoGame
             noteTex = Content.Load<Texture2D>("note");
             // TODO: use this.Content to load your game content here
 
+            aSong = Content.Load<Song>("a");
         }
 
         /// <summary>
@@ -92,10 +98,17 @@ namespace PianoGame
 
             // TODO: Add your drawing code here
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
-            DrawNote(a);
-            DrawNote(b);
+            DrawNotes();
             spriteBatch.End();
             base.Draw(gameTime);
+        }
+
+        public void DrawNotes()
+        {
+            foreach (Note note in staff.GetCurrentNotes())
+            {
+                DrawNote(note);
+            }
         }
 
         public void DrawNote(Note note)
