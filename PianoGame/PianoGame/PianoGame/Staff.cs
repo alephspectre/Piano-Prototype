@@ -5,6 +5,7 @@ using System.Text;
 //using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace PianoGame
 {
@@ -45,7 +46,7 @@ namespace PianoGame
             rightTimeSpan = 30.0f;
 
             speedFactor = 0.2f;
-            pointerLoc = 30.0f;
+            pointerLoc = 236.0f;
         }
 
         public void PlayMusic(Song sng)
@@ -68,6 +69,7 @@ namespace PianoGame
 
         public List<Note> GetCurrentNotes()
         {
+            //TODO: Optimize this using currentIndex 
             return noteList;
         }
 
@@ -86,7 +88,13 @@ namespace PianoGame
 
             musicTime = MediaPlayer.PlayPosition.TotalMilliseconds;
 
-            Console.WriteLine(musicTime);
+            KeyboardState kb = Keyboard.GetState();
+            if (kb.IsKeyDown(Keys.A))
+            {
+                Console.WriteLine("A KEY DOWN");
+            }
+
+            //Console.WriteLine(musicTime);
         }
     
     }

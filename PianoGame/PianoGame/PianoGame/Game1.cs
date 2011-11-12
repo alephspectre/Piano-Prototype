@@ -126,7 +126,10 @@ namespace PianoGame
         {
             foreach (Note note in staff.GetCurrentNotes())
             {
-                DrawNote(note);
+                if (note.visible)
+                {
+                    DrawNote(note);
+                }
             }
         }
 
