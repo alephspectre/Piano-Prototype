@@ -20,10 +20,10 @@ namespace PianoGame
         SpriteBatch spriteBatch;
 
         Texture2D noteTex;
-
-        Staff staff;
         Song aSong;
 
+        Staff staff;
+        
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -40,7 +40,6 @@ namespace PianoGame
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            MediaPlayer.Play(aSong);
             staff = new Staff();
             Note a = new Note(new Vector2(0.0f, 0.0f), 0.0f, 0.0f, 0, 0);
             Note b = new Note(new Vector2(0.0f, 100.0f), 0.0f, 0.0f, 0, 0);
@@ -60,7 +59,7 @@ namespace PianoGame
             noteTex = Content.Load<Texture2D>("note");
             // TODO: use this.Content to load your game content here
 
-            aSong = Content.Load<Song>("a");
+            aSong = Content.Load<Song>("test");
         }
 
         /// <summary>
@@ -84,7 +83,11 @@ namespace PianoGame
                 this.Exit();
 
             // TODO: Add your update logic here
-            
+            if (aSong != null && staff.status == 0) { 
+                staff.PlayMusic(aSong);
+                staff.status = 1;
+            }
+
             base.Update(gameTime);
         }
 
