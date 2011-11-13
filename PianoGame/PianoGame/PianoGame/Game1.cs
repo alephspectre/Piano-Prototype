@@ -53,6 +53,35 @@ namespace PianoGame
 
 
             staff = new Staff();
+
+            staff.AddNote(new Note(new Vector2(2050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(2550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(3050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(3550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(4050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(4550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(5050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(6050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(6550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(7050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(8050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(8550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(9050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(10050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(10550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(11050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(11550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(12051.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(12550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(13050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(13550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(14050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(14550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(15050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(15550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+            staff.AddNote(new Note(new Vector2(16050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
+
+            /*
             Note a = new Note(new Vector2(2000.0f + 00f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D); //new Vector2(abs time, height in pixels)
             Note b = new Note(new Vector2(2000.0f + 400f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.S);
             Note c = new Note(new Vector2(2000.0f + 800f, 720.0f - 286.0f - 220.0f - 1.5f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
@@ -82,7 +111,7 @@ namespace PianoGame
             staff.AddNote(j);
             staff.AddNote(k);
             staff.AddNote(l);
-            staff.AddNote(m);
+            staff.AddNote(m);*/
 
             keyboardManager = new KeyboardManager(staff);
 
@@ -101,7 +130,7 @@ namespace PianoGame
             noteTex = Content.Load<Texture2D>("note");
             // TODO: use this.Content to load your game content here
 
-            aSong = Content.Load<Song>("test");
+            aSong = Content.Load<Song>("MHALL");
         }
 
         /// <summary>
