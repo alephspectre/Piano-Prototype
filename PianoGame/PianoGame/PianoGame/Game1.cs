@@ -53,23 +53,23 @@ namespace PianoGame
 
 
             staff = new Staff();
-            Note a = new Note(new Vector2(2000.0f + 00f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.A); //new Vector2(abs time, height in pixels)
-            Note b = new Note(new Vector2(2000.0f + 400f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
+            Note a = new Note(new Vector2(2000.0f + 00f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D); //new Vector2(abs time, height in pixels)
+            Note b = new Note(new Vector2(2000.0f + 400f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.S);
             Note c = new Note(new Vector2(2000.0f + 800f, 720.0f - 286.0f - 220.0f - 1.5f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
-            Note d = new Note(new Vector2(2000.0f + 1200f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
-            //mi mi mi
-            Note e = new Note(new Vector2(2000.0f + 1600f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.S);
-            Note f = new Note(new Vector2(2000.0f + 2000f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.S);
-            Note g = new Note(new Vector2(2000.0f + 2400f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.S);
-            // re re re
-            Note h = new Note(new Vector2(2400.0f + 2800f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
-            Note i = new Note(new Vector2(2400.0f + 3200f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
-            Note j = new Note(new Vector2(2400.0f + 3600f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
+            Note d = new Note(new Vector2(2000.0f + 1200f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.S);//dsasddd-sss-ddd- dsasddddssdsa a= middle C s = D d =E on piano
+            //mi mi mi (Piano E, keyboard d)
+            Note e = new Note(new Vector2(2000.0f + 1600f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D);
+            Note f = new Note(new Vector2(2000.0f + 2000f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D);
+            Note g = new Note(new Vector2(2000.0f + 2400f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D);
+            // re re re (Piano D, keyboard s)
+            Note h = new Note(new Vector2(2400.0f + 2800f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.S);
+            Note i = new Note(new Vector2(2400.0f + 3200f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.S);
+            Note j = new Note(new Vector2(2400.0f + 3600f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.S);
             // mi mi mi
-            Note k = new Note(new Vector2(2800.0f + 4000f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
-            Note l = new Note(new Vector2(2800.0f + 4400f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
-            Note m = new Note(new Vector2(2800.0f + 4800f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
-
+            Note k = new Note(new Vector2(2800.0f + 4000f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D);
+            Note l = new Note(new Vector2(2800.0f + 4400f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D);
+            Note m = new Note(new Vector2(2800.0f + 4800f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D);
+            
             staff.AddNote(a);
             staff.AddNote(b);
             staff.AddNote(c);
@@ -81,6 +81,8 @@ namespace PianoGame
             staff.AddNote(i);
             staff.AddNote(j);
             staff.AddNote(k);
+            staff.AddNote(l);
+            staff.AddNote(m);
 
             keyboardManager = new KeyboardManager(staff);
 
