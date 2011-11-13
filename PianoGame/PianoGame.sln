@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010 Express for Windows Phone
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PianoGame", "PianoGame\PianoGame\PianoGame.csproj", "{CBB5BF0C-A1CB-4B5E-ACD0-C33827551F92}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keyboard Master", "PianoGame\PianoGame\Keyboard Master.csproj", "{CBB5BF0C-A1CB-4B5E-ACD0-C33827551F92}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PianoGameContent", "PianoGame\PianoGameContent\PianoGameContent.contentproj", "{ADD671E7-A221-4EF8-8D8A-C55EE43022C7}"
 EndProject

@@ -32,7 +32,7 @@ namespace PianoGame
 
         public SongStatus status;
 
-        public float msLeeway = 200.0f; //How far off you can be to get a note
+        public float msLeeway = 150.0f; //How far off you can be to get a note
 
         public float songScore;
         public float songPerfectScore;
@@ -56,7 +56,7 @@ namespace PianoGame
             rightTimeSpan = 30.0f;
 
             speedFactor = 0.2f;
-            pointerLoc = 236.0f;
+            pointerLoc = 306.0f;
         }
 
         public void PlayMusic(Song sng)

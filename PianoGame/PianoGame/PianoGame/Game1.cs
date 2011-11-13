@@ -31,6 +31,8 @@ namespace PianoGame
 
         SpriteBatch spriteBatch;
 
+        Vector2 textOffset = new Vector2(100, 40);
+
         Texture2D menuTex;
         Texture2D quarterNoteTex;
         Texture2D halfNoteTex;
@@ -64,6 +66,7 @@ namespace PianoGame
             //Set the screen height and width       
             graphics.PreferredBackBufferWidth = 1280;
             graphics.PreferredBackBufferHeight = 720;
+            graphics.IsFullScreen = true;
             
 
             //Apply the changes made to the device
@@ -154,7 +157,7 @@ namespace PianoGame
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
             // TODO: Add your update logic here
@@ -237,7 +240,7 @@ namespace PianoGame
                         string scoreString = staff.songScore.ToString("N0");
 
                         // Score
-                        spriteBatch.DrawString(scoreFont, scoreString, Vector2.Zero, Color.Black,
+                        spriteBatch.DrawString(scoreFont, scoreString, textOffset, Color.Black,
                             0, Vector2.Zero, 1.0f, SpriteEffects.None, 0.5f);
                     }
                     else
@@ -255,7 +258,7 @@ namespace PianoGame
                     string conclusion = "You scored: " + (staff.songScore / staff.songPerfectScore).ToString("P2") + "\n Press any key to try again.";
                     spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
                     // Score
-                    spriteBatch.DrawString(scoreFont, conclusion, Vector2.Zero, Color.Black,
+                    spriteBatch.DrawString(scoreFont, conclusion, textOffset, Color.Black,
                         0, Vector2.Zero, 1.0f, SpriteEffects.None, 0.5f);
                     spriteBatch.End();
                     break;
