@@ -54,64 +54,45 @@ namespace PianoGame
 
             staff = new Staff();
 
-            staff.AddNote(new Note(new Vector2(2050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(2550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(3050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(3550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(4050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(4550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(5050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(6050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(6550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(7050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(8050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(8550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(9050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(10050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(10550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(11050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(11550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(12051.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(12550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(13050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(13550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(14050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(14550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(15050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(15550.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
-            staff.AddNote(new Note(new Vector2(16050.0f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D));
 
-            /*
-            Note a = new Note(new Vector2(2000.0f + 00f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D); //new Vector2(abs time, height in pixels)
-            Note b = new Note(new Vector2(2000.0f + 400f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.S);
-            Note c = new Note(new Vector2(2000.0f + 800f, 720.0f - 286.0f - 220.0f - 1.5f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
-            Note d = new Note(new Vector2(2000.0f + 1200f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.S);//dsasddd-sss-ddd- dsasddddssdsa a= middle C s = D d =E on piano
-            //mi mi mi (Piano E, keyboard d)
-            Note e = new Note(new Vector2(2000.0f + 1600f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D);
-            Note f = new Note(new Vector2(2000.0f + 2000f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D);
-            Note g = new Note(new Vector2(2000.0f + 2400f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D);
-            // re re re (Piano D, keyboard s)
-            Note h = new Note(new Vector2(2400.0f + 2800f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.S);
-            Note i = new Note(new Vector2(2400.0f + 3200f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.S);
-            Note j = new Note(new Vector2(2400.0f + 3600f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.S);
-            // mi mi mi
-            Note k = new Note(new Vector2(2800.0f + 4000f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D);
-            Note l = new Note(new Vector2(2800.0f + 4400f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D);
-            Note m = new Note(new Vector2(2800.0f + 4800f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.D);
-            
-            staff.AddNote(a);
-            staff.AddNote(b);
-            staff.AddNote(c);
-            staff.AddNote(d);
-            staff.AddNote(e);
-            staff.AddNote(f);
-            staff.AddNote(g);
-            staff.AddNote(h);
-            staff.AddNote(i);
-            staff.AddNote(j);
-            staff.AddNote(k);
-            staff.AddNote(l);
-            staff.AddNote(m);*/
+            //BEGIN MARY HAD A LITTLE LAMB
+            const float EPOS = 720.0f - 286.0f - 220.0f - 2.5f * 55.0f;
+            const float DPOS = 720.0f - 286.0f - 220.0f - 2.0f * 55.0f;
+            const float CPOS = 720.0f - 286.0f - 220.0f - 1.5f * 55.0f;
+
+            const Keys E_KEY = Keys.D;
+            const Keys D_KEY = Keys.S;
+            const Keys C_KEY = Keys.A;
+
+            //dsasddd-sss-ddd- dsasddddssdsa a= middle C s = D d =E on piano
+
+            staff.AddNote(new Note(new Vector2(2050.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(2550.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(3050.0f, CPOS), 0.0f, 0.0f, 0, C_KEY)); //C
+            staff.AddNote(new Note(new Vector2(3550.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(4050.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(4550.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(5050.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(6050.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(6550.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(7050.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(8050.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(8550.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(9050.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(10050.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(10550.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(11050.0f, CPOS), 0.0f, 0.0f, 0, C_KEY)); //C
+            staff.AddNote(new Note(new Vector2(11550.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(12051.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(12550.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(13050.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(13550.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(14050.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(14550.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(15050.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(15550.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(16050.0f, CPOS), 0.0f, 0.0f, 0, C_KEY)); //C
+            //END MARY HAD A LITTLE LAMB
 
             keyboardManager = new KeyboardManager(staff);
 
