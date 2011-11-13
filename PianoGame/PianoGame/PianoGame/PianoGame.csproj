@@ -107,6 +107,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KeyboardManager.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="ParseToNotes.cs" />
     <Compile Include="Program.cs" />

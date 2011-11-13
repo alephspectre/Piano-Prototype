@@ -25,6 +25,7 @@ namespace PianoGame
         Song aSong;
 
         Staff staff;
+        KeyboardManager keyboardManager;
         
         public Game1()
         {
@@ -80,6 +81,9 @@ namespace PianoGame
             staff.AddNote(i);
             staff.AddNote(j);
             staff.AddNote(k);
+
+            keyboardManager = new KeyboardManager(staff);
+
             base.Initialize();
         }
 
@@ -124,6 +128,7 @@ namespace PianoGame
                 staff.PlayMusic(aSong);
             }
 
+            keyboardManager.Update(gameTime);
             staff.Update(gameTime);
 
             base.Update(gameTime);
