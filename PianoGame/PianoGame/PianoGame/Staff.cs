@@ -124,13 +124,13 @@ namespace PianoGame
 
         public void NotifyKeyUp(Keys aKey)
         {
-            foreach (Note note in GetCurrentNotes())
+            /*foreach (Note note in GetCurrentNotes())
             {
                 if (Math.Abs(note.position.X - (float)musicTime) < 200.0f)
                 {
                     note.visible = false;
                 }
-            }
+            }*/
         }
     
     }

@@ -49,27 +49,23 @@ namespace PianoGame
                 {
                     Console.WriteLine("Key down!");
                     possibleKeys[aKey] = true;
+                    foreach (Staff aStaff in registeredListeners)
+	                {
+                        aStaff.NotifyKeyDown(aKey);
+	                }
+                    
                 }
                 else if (kb.IsKeyUp(aKey) && possibleKeys[aKey] == true)
                 {
                     Console.WriteLine("Key up!");
                     possibleKeys[aKey] = false;
+                    foreach (Staff aStaff in registeredListeners)
+                    {
+                        aStaff.NotifyKeyUp(aKey);
+                    }
                 }
             }
 
-            /*
-            foreach (Keys aKey in possibleKeys.Keys)
-            {
-                if (kb.IsKeyDown(aKey) && possibleKeys[aKey] == false) {
-                    Console.WriteLine("Key down!");
-                    possibleKeys[aKey] = true;
-                }
-                else if (kb.IsKeyUp(aKey) && possibleKeys[aKey] == true)
-                {
-                    Console.WriteLine("Key up!");
-                    possibleKeys[aKey] = false;  
-                }
-            }*/
         }
     }
 }
