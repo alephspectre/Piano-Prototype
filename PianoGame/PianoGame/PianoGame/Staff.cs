@@ -31,10 +31,16 @@ namespace PianoGame
 
         public byte status;
 
+        public float msLeeway = 200.0f; //How far off you can be to get a note
+
+        public float songScore;
+
         Song song;
 
         public Staff()
         {
+            songScore = 0.0f;
+
             noteList = new List<Note>();
             currentIndex = 0;
             musicTime = 0.0d;
@@ -127,12 +133,23 @@ namespace PianoGame
 
         public void NotifyKeyDown(Keys aKey)
         {
+            bool gotANote = false;
             foreach (Note note in GetCurrentNotesForKey(aKey))
             {
-                if (Math.Abs(note.position.X - (float)musicTime) < 200.0f)
+                if (Math.Abs(note.position.X - (float)musicTime) < msLeeway)
                 {
                     note.visible = false;
+                    gotANote = true;
                 }
+            }
+
+            if (gotANote)
+            {
+                songScore += 10.0f;
+            }
+            else
+            {
+                songScore -= 10.0f;
             }
         }
 

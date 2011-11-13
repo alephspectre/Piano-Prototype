@@ -165,7 +165,7 @@ namespace PianoGame
             spriteBatch.Draw(staffTex, Vector2.Zero, Color.White);
             DrawNotes();
 
-            string output = "000.00";
+            string output = staff.songScore.ToString("N0");
 
             // Draw the string
             spriteBatch.DrawString(scoreFont, output, Vector2.Zero, Color.Black,
