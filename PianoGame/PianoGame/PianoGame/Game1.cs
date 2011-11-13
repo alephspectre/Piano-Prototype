@@ -14,18 +14,33 @@ namespace PianoGame
     /// <summary>
     /// This is the main type for your game
     /// </summary>
+    /// 
+
+    public enum GameStatus //There is a lot of potential to perform some sort of clean 
+                           //encapsulation of game state after the prototype stage.
+                           // It will get much too messy with multiple levels.
+    {
+        mainMenu,
+        playing,
+        endScreen
+    }
+
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
 
         SpriteBatch spriteBatch;
 
+        Texture2D menuTex;
         Texture2D quarterNoteTex;
         Texture2D halfNoteTex;
         Texture2D wholeNoteTex;
         Texture2D staffTex;
         SpriteFont scoreFont;
         Song aSong;
+        float interruptTimer = 0.0f; //Nice for people and also fixes problem where switching to game loses points
+
+        GameStatus gameStatus = GameStatus.mainMenu;
 
         Staff staff;
         KeyboardManager keyboardManager;
@@ -111,6 +126,8 @@ namespace PianoGame
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            menuTex = Content.Load<Texture2D>("splash");
+
             staffTex = Content.Load<Texture2D>("staff");
             quarterNoteTex = Content.Load<Texture2D>("quarter_note");
             halfNoteTex = Content.Load<Texture2D>("half_note");
@@ -141,13 +158,52 @@ namespace PianoGame
                 this.Exit();
 
             // TODO: Add your update logic here
-            if (aSong != null && staff.status == (byte)SongStatus.loading)
-            { 
-                staff.PlayMusic(aSong);
+
+            switch (gameStatus)
+            {
+                case GameStatus.mainMenu:
+                    if (Keyboard.GetState().GetPressedKeys().Length > 0)
+                    {
+                        gameStatus = GameStatus.playing;
+                        interruptTimer = (float)gameTime.TotalGameTime.TotalMilliseconds;
+                    }
+                    break;
+                case GameStatus.playing:
+                    if ((float)gameTime.TotalGameTime.TotalMilliseconds - interruptTimer >= 3000.0f)
+                    {
+                        if (aSong != null && staff.status == SongStatus.loading)
+                        {
+                            staff.PlayMusic(aSong);
+                            keyboardManager.Reset();
+                        }
+                        else
+                        {
+                            keyboardManager.Update(gameTime);
+                        }
+                        staff.Update(gameTime);
+                        if (staff.status == SongStatus.finished)
+                        {
+                            interruptTimer = (float)gameTime.TotalGameTime.TotalMilliseconds;
+                            gameStatus = GameStatus.endScreen;
+                        }
+                    }
+                    break;
+                case GameStatus.endScreen:
+                    if ((float)gameTime.TotalGameTime.TotalMilliseconds - interruptTimer >= 200.0f)
+                    {
+                        if (Keyboard.GetState().GetPressedKeys().Length > 0)
+                        {
+                            gameStatus = GameStatus.playing;
+                            staff.Reset();
+                            keyboardManager.Reset();
+                            interruptTimer = (float)gameTime.TotalGameTime.TotalMilliseconds;
+                        }
+                    }
+                    break;
+                default:
+                    break;
             }
 
-            keyboardManager.Update(gameTime);
-            staff.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -160,18 +216,53 @@ namespace PianoGame
         {
             GraphicsDevice.Clear(Color.White);
 
-            // TODO: Add your drawing code here
-            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
-            spriteBatch.Draw(staffTex, Vector2.Zero, Color.White);
-            DrawNotes();
 
-            string output = staff.songScore.ToString("N0");
+            switch (gameStatus)
+            {
+                case GameStatus.mainMenu:
+                    spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
+                    spriteBatch.Draw(menuTex, Vector2.Zero, Color.White);
+                    spriteBatch.End();
+                    break;
+                case GameStatus.playing:
+                    spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
+                    
 
-            // Draw the string
-            spriteBatch.DrawString(scoreFont, output, Vector2.Zero, Color.Black,
-                0, Vector2.Zero, 1.0f, SpriteEffects.None, 0.5f);
+                    if ((float)gameTime.TotalGameTime.TotalMilliseconds - interruptTimer >= 3000.0f)
+                    {
+                        spriteBatch.Draw(staffTex, Vector2.Zero, Color.White);
 
-            spriteBatch.End();
+                        DrawNotes();
+
+                        string scoreString = staff.songScore.ToString("N0");
+
+                        // Score
+                        spriteBatch.DrawString(scoreFont, scoreString, Vector2.Zero, Color.Black,
+                            0, Vector2.Zero, 1.0f, SpriteEffects.None, 0.5f);
+                    }
+                    else
+                    {
+                        string countDown = (3.0f - ((float)gameTime.TotalGameTime.TotalMilliseconds - interruptTimer)/1000.0).ToString("N0");
+
+                        // Score
+                        spriteBatch.DrawString(scoreFont, countDown, new Vector2(1280/2,720/2-50.0f), Color.Black,
+                            0, Vector2.Zero, 1.0f, SpriteEffects.None, 0.5f);
+                    }
+                    spriteBatch.End();
+                    break;
+                case GameStatus.endScreen:
+
+                    string conclusion = "You scored: " + (staff.songScore / staff.songPerfectScore).ToString("P2") + "\n Press any key to try again.";
+                    spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
+                    // Score
+                    spriteBatch.DrawString(scoreFont, conclusion, Vector2.Zero, Color.Black,
+                        0, Vector2.Zero, 1.0f, SpriteEffects.None, 0.5f);
+                    spriteBatch.End();
+                    break;
+                default:
+                    break;
+            }
+
             base.Draw(gameTime);
         }
 

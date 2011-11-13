@@ -9,12 +9,13 @@ using Microsoft.Xna.Framework.Input;
 
 namespace PianoGame
 {
-    enum SongStatus
+    public enum SongStatus
     {
         loading,
         waiting,
         stopped,
-        playing
+        playing,
+        finished
     }
 
     class Staff
@@ -29,23 +30,26 @@ namespace PianoGame
         public List<Note> noteList; //All of the notes in the song
         public int currentIndex; //The index in noteList that roughly corresponds to musicTime
 
-        public byte status;
+        public SongStatus status;
 
         public float msLeeway = 200.0f; //How far off you can be to get a note
 
         public float songScore;
+        public float songPerfectScore;
 
         Song song;
+        double songDuration;
 
         public Staff()
         {
             songScore = 0.0f;
+            songPerfectScore = 0.0f;
 
             noteList = new List<Note>();
             currentIndex = 0;
             musicTime = 0.0d;
 
-            status = (byte)SongStatus.loading;
+            status = SongStatus.loading;
 
             //TODO: Figure out what values these should have
             leftTimeSpan = 10.0f;
@@ -58,19 +62,21 @@ namespace PianoGame
         public void PlayMusic(Song sng)
         {
             song = sng;
+            songDuration = sng.Duration.TotalMilliseconds;
             MediaPlayer.Play(song);
-            status = (byte)SongStatus.waiting;
+            status = SongStatus.waiting;
         }
 
         public void PlayMusic()
         {
             MediaPlayer.Play(song);
-            status = (byte)SongStatus.waiting;
+            status = SongStatus.waiting;
         }
 
         public void AddNote(Note note)
         {
             noteList.Add(note);
+            songPerfectScore += 10.0f;
         }
 
         public List<Note> GetCurrentNotes()
@@ -101,9 +107,9 @@ namespace PianoGame
 
         public void Update(GameTime gameTime)
         {
-            if (status == (byte)SongStatus.waiting && MediaPlayer.State == MediaState.Playing)
+            if (status == SongStatus.waiting && MediaPlayer.State == MediaState.Playing)
             {
-                status = (byte)SongStatus.playing;
+                status = SongStatus.playing;
             }
 
             musicTime = MediaPlayer.PlayPosition.TotalMilliseconds;
@@ -117,18 +123,10 @@ namespace PianoGame
                     }
             }
 
-            /*KeyboardState kb = Keyboard.GetState();
-            if (kb.IsKeyDown(Keys.A))
+            if (musicTime >= songDuration - 1000.0d) //We should make sure that every song has at least 1s blank at end
             {
-                foreach (Note note in GetCurrentNotes())
-                {
-                    if (Math.Abs(note.position.X - (float)musicTime) < 200.0f) {
-                        note.visible = false;
-                    }
-                }
-            }*/
-
-            //Console.WriteLine(musicTime);
+                status = SongStatus.finished;
+            }
         }
 
         public void NotifyKeyDown(Keys aKey)
@@ -162,6 +160,18 @@ namespace PianoGame
                     note.visible = false;
                 }
             }*/
+        }
+
+        public void Reset()
+        {
+            songScore = 0.0f;
+            currentIndex = 0;
+            musicTime = 0.0d;
+            foreach (Note note in noteList)
+            {
+                note.visible = true;
+            }
+            status = SongStatus.loading;
         }
     
     }

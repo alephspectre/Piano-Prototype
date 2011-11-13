@@ -27,6 +27,11 @@ namespace PianoGame
 
         public void SetupWithComputerKeyboard ()
         {
+            Reset();
+        }
+
+        public void Reset()
+        {
             possibleKeys[Keys.A] = false;
             possibleKeys[Keys.S] = false;
             possibleKeys[Keys.D] = false;
