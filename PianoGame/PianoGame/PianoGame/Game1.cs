@@ -24,6 +24,7 @@ namespace PianoGame
         Texture2D halfNoteTex;
         Texture2D wholeNoteTex;
         Texture2D staffTex;
+        SpriteFont scoreFont;
         Song aSong;
 
         Staff staff;
@@ -109,11 +110,12 @@ namespace PianoGame
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
             staffTex = Content.Load<Texture2D>("staff");
             quarterNoteTex = Content.Load<Texture2D>("quarter_note");
             halfNoteTex = Content.Load<Texture2D>("half_note");
             wholeNoteTex = Content.Load<Texture2D>("whole_note");
-            // TODO: use this.Content to load your game content here
+            scoreFont = Content.Load<SpriteFont>("ClassicaBold");
 
             aSong = Content.Load<Song>("MHALL");
         }
@@ -162,6 +164,13 @@ namespace PianoGame
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
             spriteBatch.Draw(staffTex, Vector2.Zero, Color.White);
             DrawNotes();
+
+            string output = "000.00";
+
+            // Draw the string
+            spriteBatch.DrawString(scoreFont, output, Vector2.Zero, Color.Black,
+                0, Vector2.Zero, 1.0f, SpriteEffects.None, 0.5f);
+
             spriteBatch.End();
             base.Draw(gameTime);
         }
