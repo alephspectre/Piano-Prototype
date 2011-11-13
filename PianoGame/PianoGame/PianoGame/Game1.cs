@@ -53,22 +53,22 @@ namespace PianoGame
 
 
             staff = new Staff();
-            Note a = new Note(new Vector2(2000.0f + 00f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, 0); //new Vector2(abs time, height in pixels)
-            Note b = new Note(new Vector2(2000.0f + 400f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, 0);
-            Note c = new Note(new Vector2(2000.0f + 800f, 720.0f - 286.0f - 220.0f - 1.5f * 55.0f), 0.0f, 0.0f, 0, 0);
-            Note d = new Note(new Vector2(2000.0f + 1200f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, 0);
+            Note a = new Note(new Vector2(2000.0f + 00f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.A); //new Vector2(abs time, height in pixels)
+            Note b = new Note(new Vector2(2000.0f + 400f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
+            Note c = new Note(new Vector2(2000.0f + 800f, 720.0f - 286.0f - 220.0f - 1.5f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
+            Note d = new Note(new Vector2(2000.0f + 1200f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
             //mi mi mi
-            Note e = new Note(new Vector2(2000.0f + 1600f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, 0);
-            Note f = new Note(new Vector2(2000.0f + 2000f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, 0);
-            Note g = new Note(new Vector2(2000.0f + 2400f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, 0);
+            Note e = new Note(new Vector2(2000.0f + 1600f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.S);
+            Note f = new Note(new Vector2(2000.0f + 2000f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.S);
+            Note g = new Note(new Vector2(2000.0f + 2400f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.S);
             // re re re
-            Note h = new Note(new Vector2(2400.0f + 2800f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, 0);
-            Note i = new Note(new Vector2(2400.0f + 3200f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, 0);
-            Note j = new Note(new Vector2(2400.0f + 3600f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, 0);
+            Note h = new Note(new Vector2(2400.0f + 2800f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
+            Note i = new Note(new Vector2(2400.0f + 3200f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
+            Note j = new Note(new Vector2(2400.0f + 3600f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
             // mi mi mi
-            Note k = new Note(new Vector2(2800.0f + 4000f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, 0);
-            Note l = new Note(new Vector2(2800.0f + 4400f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, 0);
-            Note m = new Note(new Vector2(2800.0f + 4800f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, 0);
+            Note k = new Note(new Vector2(2800.0f + 4000f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
+            Note l = new Note(new Vector2(2800.0f + 4400f, 720.0f - 286.0f - 220.0f - 2.5f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
+            Note m = new Note(new Vector2(2800.0f + 4800f, 720.0f - 286.0f - 220.0f - 2.0f * 55.0f), 0.0f, 0.0f, 0, Keys.A);
 
             staff.AddNote(a);
             staff.AddNote(b);

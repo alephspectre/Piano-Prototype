@@ -73,6 +73,20 @@ namespace PianoGame
             return noteList;
         }
 
+        public List<Note> GetCurrentNotesForKey(Keys aKey)
+        {
+            //TODO: Optimize this using currentIndex
+            List<Note> currNoteList = new List<Note>();
+            foreach (Note note in noteList)
+            {
+                if (note.keyToPress == aKey)
+                {
+                    currNoteList.Add(note);
+                }
+            }
+            return currNoteList;
+        }
+
         public float GetNoteX(float noteTime)
         {
 
@@ -113,7 +127,7 @@ namespace PianoGame
 
         public void NotifyKeyDown(Keys aKey)
         {
-            foreach (Note note in GetCurrentNotes())
+            foreach (Note note in GetCurrentNotesForKey(aKey))
             {
                 if (Math.Abs(note.position.X - (float)musicTime) < 200.0f)
                 {
