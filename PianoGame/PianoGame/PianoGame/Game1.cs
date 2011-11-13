@@ -20,7 +20,9 @@ namespace PianoGame
 
         SpriteBatch spriteBatch;
 
-        Texture2D noteTex;
+        Texture2D quarterNoteTex;
+        Texture2D halfNoteTex;
+        Texture2D wholeNoteTex;
         Texture2D staffTex;
         Song aSong;
 
@@ -54,44 +56,44 @@ namespace PianoGame
 
             staff = new Staff();
 
-
-            //BEGIN MARY HAD A LITTLE LAMB
-            const float EPOS = 720.0f - 286.0f - 220.0f - 2.5f * 55.0f;
-            const float DPOS = 720.0f - 286.0f - 220.0f - 2.0f * 55.0f;
-            const float CPOS = 720.0f - 286.0f - 220.0f - 1.5f * 55.0f;
+            const float EPOS = 251.0f;
+            const float DPOS = 251.0f + 27.0f;
+            const float CPOS = 251.0f + 54.0f;
 
             const Keys E_KEY = Keys.D;
             const Keys D_KEY = Keys.S;
             const Keys C_KEY = Keys.A;
 
+            //BEGIN MARY HAD A LITTLE LAMB
+
             //dsasddd-sss-ddd- dsasddddssdsa a= middle C s = D d =E on piano
 
-            staff.AddNote(new Note(new Vector2(2050.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
-            staff.AddNote(new Note(new Vector2(2550.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
-            staff.AddNote(new Note(new Vector2(3050.0f, CPOS), 0.0f, 0.0f, 0, C_KEY)); //C
-            staff.AddNote(new Note(new Vector2(3550.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
-            staff.AddNote(new Note(new Vector2(4050.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
-            staff.AddNote(new Note(new Vector2(4550.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
-            staff.AddNote(new Note(new Vector2(5050.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
-            staff.AddNote(new Note(new Vector2(6050.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
-            staff.AddNote(new Note(new Vector2(6550.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
-            staff.AddNote(new Note(new Vector2(7050.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
-            staff.AddNote(new Note(new Vector2(8050.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
-            staff.AddNote(new Note(new Vector2(8550.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
-            staff.AddNote(new Note(new Vector2(9050.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
-            staff.AddNote(new Note(new Vector2(10050.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
-            staff.AddNote(new Note(new Vector2(10550.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
-            staff.AddNote(new Note(new Vector2(11050.0f, CPOS), 0.0f, 0.0f, 0, C_KEY)); //C
-            staff.AddNote(new Note(new Vector2(11550.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
-            staff.AddNote(new Note(new Vector2(12051.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
-            staff.AddNote(new Note(new Vector2(12550.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
-            staff.AddNote(new Note(new Vector2(13050.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
-            staff.AddNote(new Note(new Vector2(13550.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
-            staff.AddNote(new Note(new Vector2(14050.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
-            staff.AddNote(new Note(new Vector2(14550.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
-            staff.AddNote(new Note(new Vector2(15050.0f, EPOS), 0.0f, 0.0f, 0, E_KEY)); //E
-            staff.AddNote(new Note(new Vector2(15550.0f, DPOS), 0.0f, 0.0f, 0, D_KEY)); //D
-            staff.AddNote(new Note(new Vector2(16050.0f, CPOS), 0.0f, 0.0f, 0, C_KEY)); //C
+            staff.AddNote(new Note(new Vector2(2050.0f, EPOS), 0.0f, 0.0f, NoteType.quarter, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(2550.0f, DPOS), 0.0f, 0.0f, NoteType.quarter, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(3050.0f, CPOS), 0.0f, 0.0f, NoteType.quarter, C_KEY)); //C
+            staff.AddNote(new Note(new Vector2(3550.0f, DPOS), 0.0f, 0.0f, NoteType.quarter, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(4050.0f, EPOS), 0.0f, 0.0f, NoteType.quarter, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(4550.0f, EPOS), 0.0f, 0.0f, NoteType.quarter, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(5050.0f, EPOS), 0.0f, 0.0f, NoteType.half, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(6050.0f, DPOS), 0.0f, 0.0f, NoteType.quarter, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(6550.0f, DPOS), 0.0f, 0.0f, NoteType.quarter, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(7050.0f, DPOS), 0.0f, 0.0f, NoteType.half, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(8050.0f, EPOS), 0.0f, 0.0f, NoteType.quarter, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(8550.0f, EPOS), 0.0f, 0.0f, NoteType.quarter, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(9050.0f, EPOS), 0.0f, 0.0f, NoteType.half, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(10050.0f, EPOS), 0.0f, 0.0f, NoteType.quarter, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(10550.0f, DPOS), 0.0f, 0.0f, NoteType.quarter, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(11050.0f, CPOS), 0.0f, 0.0f, NoteType.quarter, C_KEY)); //C
+            staff.AddNote(new Note(new Vector2(11550.0f, DPOS), 0.0f, 0.0f, NoteType.quarter, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(12051.0f, EPOS), 0.0f, 0.0f, NoteType.quarter, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(12550.0f, EPOS), 0.0f, 0.0f, NoteType.quarter, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(13050.0f, EPOS), 0.0f, 0.0f, NoteType.quarter, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(13550.0f, EPOS), 0.0f, 0.0f, NoteType.quarter, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(14050.0f, DPOS), 0.0f, 0.0f, NoteType.quarter, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(14550.0f, DPOS), 0.0f, 0.0f, NoteType.quarter, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(15050.0f, EPOS), 0.0f, 0.0f, NoteType.quarter, E_KEY)); //E
+            staff.AddNote(new Note(new Vector2(15550.0f, DPOS), 0.0f, 0.0f, NoteType.quarter, D_KEY)); //D
+            staff.AddNote(new Note(new Vector2(16050.0f, CPOS), 0.0f, 0.0f, NoteType.whole, C_KEY)); //C
             //END MARY HAD A LITTLE LAMB
 
             keyboardManager = new KeyboardManager(staff);
@@ -108,7 +110,9 @@ namespace PianoGame
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             staffTex = Content.Load<Texture2D>("staff");
-            noteTex = Content.Load<Texture2D>("note");
+            quarterNoteTex = Content.Load<Texture2D>("quarter_note");
+            halfNoteTex = Content.Load<Texture2D>("half_note");
+            wholeNoteTex = Content.Load<Texture2D>("whole_note");
             // TODO: use this.Content to load your game content here
 
             aSong = Content.Load<Song>("MHALL");
@@ -178,8 +182,17 @@ namespace PianoGame
             Texture2D tex;
             switch (note.type)
             {
+                case NoteType.quarter:
+                    tex = quarterNoteTex;
+                    break;
+                case NoteType.half:
+                    tex = halfNoteTex;
+                    break;
+                case NoteType.whole:
+                    tex = wholeNoteTex;
+                    break;
                 default:
-                    tex = noteTex;
+                    tex = quarterNoteTex;
                     break;
             }
 
