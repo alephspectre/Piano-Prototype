@@ -1,0 +1,7 @@
+c:\users\julian ceipek\documents\visual studio 2010\Projects\Robots\Robots\Robots\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\julian ceipek\documents\visual studio 2010\Projects\Robots\Robots\Robots\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\julian ceipek\documents\visual studio 2010\Projects\Robots\Robots\Robots\bin\x86\Debug\Robots.exe
+c:\users\julian ceipek\documents\visual studio 2010\Projects\Robots\Robots\Robots\bin\x86\Debug\Robots.pdb
+c:\users\julian ceipek\documents\visual studio 2010\Projects\Robots\Robots\Robots\obj\x86\Debug\Robots.exe
+c:\users\julian ceipek\documents\visual studio 2010\Projects\Robots\Robots\Robots\obj\x86\Debug\Robots.pdb
+c:\users\julian ceipek\documents\visual studio 2010\Projects\Robots\Robots\Robots\bin\x86\Debug\Content\robot.xnb

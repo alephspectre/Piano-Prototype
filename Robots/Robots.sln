@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010 Express for Windows Phone
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Robots", "Robots\Robots\Robots.csproj", "{02F73EEF-6B66-4265-8D0A-50558700E0E8}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "RobotsContent", "Robots\RobotsContent\RobotsContent.contentproj", "{2C07B724-0460-4C00-8B3A-26DFF29B097D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02F73EEF-6B66-4265-8D0A-50558700E0E8}.Debug|x86.ActiveCfg = Debug|x86
+		{02F73EEF-6B66-4265-8D0A-50558700E0E8}.Debug|x86.Build.0 = Debug|x86
+		{02F73EEF-6B66-4265-8D0A-50558700E0E8}.Release|x86.ActiveCfg = Release|x86
+		{02F73EEF-6B66-4265-8D0A-50558700E0E8}.Release|x86.Build.0 = Release|x86
+		{2C07B724-0460-4C00-8B3A-26DFF29B097D}.Debug|x86.ActiveCfg = Debug|x86
+		{2C07B724-0460-4C00-8B3A-26DFF29B097D}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
