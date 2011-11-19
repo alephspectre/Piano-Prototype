@@ -10,7 +10,7 @@ namespace PianoGame
         /// </summary>
         static void Main(string[] args)
         {
-            using (Game1 game = new Game1())
+            using (KeyboardMaster game = new KeyboardMaster())
             {
                 game.Run();
             }

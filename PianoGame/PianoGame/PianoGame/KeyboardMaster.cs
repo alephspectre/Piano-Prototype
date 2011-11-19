@@ -25,7 +25,7 @@ namespace PianoGame
         endScreen
     }
 
-    public class Game1 : Microsoft.Xna.Framework.Game
+    public class KeyboardMaster : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
 
@@ -47,7 +47,7 @@ namespace PianoGame
         Staff staff;
         KeyboardManager keyboardManager;
         
-        public Game1()
+        public KeyboardMaster()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";

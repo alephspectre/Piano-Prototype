@@ -125,7 +125,7 @@
     <Compile Include="Note.cs" />
     <Compile Include="ParseToNotes.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Game1.cs" />
+    <Compile Include="KeyboardMaster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Staff.cs" />
   </ItemGroup>

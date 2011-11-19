@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Musicality")]
+[assembly: AssemblyTitle("Keyboard Master")]
 [assembly: AssemblyDescription("A game prototype for the Microsoft Imagine Cup")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("PianoGame.Properties")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2011")]
+[assembly: AssemblyCompany("Phoenix Game Studio")]
+[assembly: AssemblyProduct("KeyboardMaster.Properties")]
+[assembly: AssemblyCopyright("Copyright © Phoenix Game Studio 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
