@@ -1,3 +1,6 @@
+CrossPlatform/Mac/KeyboardMaster/bin/
+.*.swp
+.DS_Store
 PianoGame/PianoGame/PianoGame/bin/
 PianoGame/PianoGame/PianoGame/bin/
 PianoGame/PianoGame/PianoGame/obj/

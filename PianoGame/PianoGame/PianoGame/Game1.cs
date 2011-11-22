@@ -38,7 +38,10 @@ namespace PianoGame
         Texture2D halfNoteTex;
         Texture2D wholeNoteTex;
         Texture2D staffTex;
+#if MONOMAC
+#else
         SpriteFont scoreFont;
+#endif
         Song aSong;
         float interruptTimer = 0.0f; //Nice for people and also fixes problem where switching to game loses points
 
@@ -64,9 +67,16 @@ namespace PianoGame
         {
             // TODO: Add your initialization logic here
             //Set the screen height and width       
-            graphics.PreferredBackBufferWidth = 1280;
-            graphics.PreferredBackBufferHeight = 720;
-            graphics.IsFullScreen = true;
+			
+#if MONOMAC
+			graphics.PreferredBackBufferWidth = (int)(1280*0.8);
+            graphics.PreferredBackBufferHeight = (int)(720*0.8);
+#else
+            graphics.PreferredBackBufferWidth = (int)(1280);
+            graphics.PreferredBackBufferHeight = (int)(720);
+			graphics.IsFullScreen = true;
+#endif
+            
             
 
             //Apply the changes made to the device
@@ -135,7 +145,11 @@ namespace PianoGame
             quarterNoteTex = Content.Load<Texture2D>("quarter_note");
             halfNoteTex = Content.Load<Texture2D>("half_note");
             wholeNoteTex = Content.Load<Texture2D>("whole_note");
-            scoreFont = Content.Load<SpriteFont>("ClassicaBold");
+			
+#if MONOMAC
+#else
+	scoreFont = Content.Load<SpriteFont>("ClassicaBold");
+#endif
 
             aSong = Content.Load<Song>("MHALL");
         }
@@ -240,16 +254,22 @@ namespace PianoGame
                         string scoreString = staff.songScore.ToString("N0");
 
                         // Score
+#if MONOMAC
+#else
                         spriteBatch.DrawString(scoreFont, scoreString, textOffset, Color.Black,
                             0, Vector2.Zero, 1.0f, SpriteEffects.None, 0.5f);
+#endif
                     }
                     else
                     {
                         string countDown = (3.0f - ((float)gameTime.TotalGameTime.TotalMilliseconds - interruptTimer)/1000.0).ToString("N0");
 
                         // Score
+#if MONOMAC
+#else
                         spriteBatch.DrawString(scoreFont, countDown, new Vector2(1280/2,720/2-50.0f), Color.Black,
                             0, Vector2.Zero, 1.0f, SpriteEffects.None, 0.5f);
+#endif
                     }
                     spriteBatch.End();
                     break;
@@ -258,8 +278,11 @@ namespace PianoGame
                     string conclusion = "You scored: " + (staff.songScore / staff.songPerfectScore).ToString("P2") + "\n Press any key to try again.";
                     spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
                     // Score
+#if MONOMAC
+#else
                     spriteBatch.DrawString(scoreFont, conclusion, textOffset, Color.Black,
                         0, Vector2.Zero, 1.0f, SpriteEffects.None, 0.5f);
+#endif
                     spriteBatch.End();
                     break;
                 default:
