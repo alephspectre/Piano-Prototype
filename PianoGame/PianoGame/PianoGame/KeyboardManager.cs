@@ -52,7 +52,7 @@ namespace PianoGame
                 Keys aKey = possibleKeys.ElementAt(i).Key;
                 if (kb.IsKeyDown(aKey) && possibleKeys[aKey] == false)
                 {
-                    Console.WriteLine("Key down!");
+                    //Console.WriteLine("Key down!");
                     possibleKeys[aKey] = true;
                     foreach (Staff aStaff in registeredListeners)
 	                {
@@ -62,7 +62,7 @@ namespace PianoGame
                 }
                 else if (kb.IsKeyUp(aKey) && possibleKeys[aKey] == true)
                 {
-                    Console.WriteLine("Key up!");
+                    //Console.WriteLine("Key up!");
                     possibleKeys[aKey] = false;
                     foreach (Staff aStaff in registeredListeners)
                     {

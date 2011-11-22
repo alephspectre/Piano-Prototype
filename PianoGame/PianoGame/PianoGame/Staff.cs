@@ -36,6 +36,8 @@ namespace PianoGame
 
         public float songScore;
         public float songPerfectScore;
+		
+		double lastMusicTime;
 
         Song song;
         double songDuration;
@@ -57,6 +59,8 @@ namespace PianoGame
 
             speedFactor = 0.2f;
             pointerLoc = 306.0f;
+			
+			lastMusicTime = 0;
         }
 
         public void PlayMusic(Song sng)
@@ -110,16 +114,28 @@ namespace PianoGame
             if (status == SongStatus.waiting && MediaPlayer.State == MediaState.Playing)
             {
                 status = SongStatus.playing;
+				musicTime = Math.Max(musicTime,MediaPlayer.PlayPosition.TotalMilliseconds);
+				lastMusicTime = musicTime;
             }
 
-            musicTime = MediaPlayer.PlayPosition.TotalMilliseconds;
+
+			if (lastMusicTime != MediaPlayer.PlayPosition.TotalMilliseconds)
+			{
+				musicTime = MediaPlayer.PlayPosition.TotalMilliseconds;
+				lastMusicTime = MediaPlayer.PlayPosition.TotalMilliseconds;
+			}
+			else
+			{
+				musicTime += gameTime.ElapsedGameTime.TotalMilliseconds;
+			}
+			
             if (noteList.Count > 0)
             {
 
                 while ((float)musicTime > noteList[currentIndex].position.X && (currentIndex < noteList.Count - 1)) 
                     {
                         currentIndex++;
-                        Console.WriteLine(currentIndex);
+                        //Console.WriteLine(currentIndex);
                     }
             }
 

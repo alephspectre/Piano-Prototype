@@ -49,6 +49,9 @@ namespace PianoGame
 
         Staff staff;
         KeyboardManager keyboardManager;
+		
+		SoundEffect soundEngine;
+		SoundEffectInstance soundEngineInstance;
         
         public Game1()
         {
@@ -152,6 +155,7 @@ namespace PianoGame
 #endif
 
             aSong = Content.Load<Song>("MHALL");
+			
         }
 
         /// <summary>
@@ -232,7 +236,9 @@ namespace PianoGame
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.White);
-
+			
+			//Console.WriteLine(gameTime.ElapsedGameTime.TotalMilliseconds);
+			
 
             switch (gameStatus)
             {
