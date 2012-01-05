@@ -16,6 +16,18 @@ namespace Keyboard_master
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        enum GameState
+        {
+            MENU,
+            LEVEL,
+            LEVEL_TO_MENU,
+            MENU_TO_LEVEL,
+            MENU_TO_MENU
+        };
+
+        GameState CurrState;
+        
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
@@ -34,6 +46,7 @@ namespace Keyboard_master
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            CurrState = GameState.MENU;
 
             base.Initialize();
         }
@@ -71,6 +84,29 @@ namespace Keyboard_master
                 this.Exit();
 
             // TODO: Add your update logic here
+
+            switch (CurrState)
+            {
+                case GameState.MENU:
+                    //TODO
+                    break;
+                case GameState.LEVEL:
+                    //TODO
+                    break;
+                case GameState.LEVEL_TO_MENU:
+                    //TODO
+                    break;
+                case GameState.MENU_TO_LEVEL:
+                    //TODO
+                    break;
+                case GameState.MENU_TO_MENU:
+                    //TODO
+                    break;
+                default:
+                    //IF IT GETS HERE, SOMETHING IS VERY BROKEN :(
+                    break;
+            }
+                    
 
             base.Update(gameTime);
         }
