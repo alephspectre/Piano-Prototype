@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keyboard_master", "Keyboard_master\Keyboard_master\Keyboard_master.csproj", "{50704668-C6BA-409C-AA5E-19FA5EB2746C}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "Keyboard_masterContent", "Keyboard_master\Keyboard_masterContent\Keyboard_masterContent.contentproj", "{81D254CD-323C-4C56-9226-BC4B364164D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50704668-C6BA-409C-AA5E-19FA5EB2746C}.Debug|x86.ActiveCfg = Debug|x86
+		{50704668-C6BA-409C-AA5E-19FA5EB2746C}.Debug|x86.Build.0 = Debug|x86
+		{50704668-C6BA-409C-AA5E-19FA5EB2746C}.Release|x86.ActiveCfg = Release|x86
+		{50704668-C6BA-409C-AA5E-19FA5EB2746C}.Release|x86.Build.0 = Release|x86
+		{81D254CD-323C-4C56-9226-BC4B364164D4}.Debug|x86.ActiveCfg = Debug|x86
+		{81D254CD-323C-4C56-9226-BC4B364164D4}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
