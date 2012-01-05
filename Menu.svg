@@ -15,9 +15,9 @@
    version="1.1"
    inkscape:version="0.48.2 r9819"
    inkscape:export-filename="C:\Users\nlintz\Documents\Software Development\ImagineCup\PianoPrototype\Piano-Prototype\Main_Menu_Placeholder.png"
-   inkscape:export-xdpi="10.13"
-   inkscape:export-ydpi="10.13"
-   sodipodi:docname="New document 1">
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
+   sodipodi:docname="Menu.svg">
   <defs
      id="defs4">
     <inkscape:path-effect
@@ -162,17 +162,35 @@
        width="185.86807"
        height="171.72594"
        x="1062.6804"
-       y="428.08789" />
+       y="367.47873" />
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        x="1123.2897"
-       y="521.02191"
+       y="460.41275"
        id="text3923"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3925"
          x="1123.2897"
-         y="521.02191">Exit</tspan></text>
+         y="460.41275">Exit</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:20;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3921-8"
+       width="185.86807"
+       height="171.72594"
+       x="1060.6602"
+       y="572.53973" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="1080.8633"
+       y="667.49408"
+       id="text3923-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3925-2"
+         x="1080.8633"
+         y="667.49408">Settings</tspan></text>
   </g>
 </svg>

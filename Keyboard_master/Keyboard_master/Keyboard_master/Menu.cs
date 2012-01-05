@@ -11,14 +11,18 @@ namespace Keyboard_master
 {
     class Menu : IDisposable
     {
+        private Texture2D background;
+
         public Menu(IServiceProvider serviceProvider)
         {
             content = new ContentManager(serviceProvider, "Content");
+            background = Content.Load<Texture2D>("Images/Main_Menu_Placeholder");
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             
+            spriteBatch.Draw(background, Vector2.Zero, Color.White);
         }
 
         public void Update(GameTime gameTime)

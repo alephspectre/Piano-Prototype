@@ -50,7 +50,10 @@ namespace Keyboard_master
         {
             // TODO: Add your initialization logic here
             CurrState = GameState.MENU;
-
+            graphics.PreferredBackBufferWidth = 1280;
+            graphics.PreferredBackBufferHeight = 720;
+            graphics.IsFullScreen = false;
+            graphics.ApplyChanges();
             base.Initialize();
         }
 
@@ -62,6 +65,7 @@ namespace Keyboard_master
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            LoadMainMenu();
 
             // TODO: use this.Content to load your game content here
         }
@@ -91,7 +95,7 @@ namespace Keyboard_master
             switch (CurrState)
             {
                 case GameState.MENU:
-                    //TODO
+                    menu.Update(gameTime);
                     break;
                 case GameState.LEVEL:
                     //TODO
@@ -114,6 +118,11 @@ namespace Keyboard_master
             base.Update(gameTime);
         }
 
+        private void LoadMainMenu()
+        {
+            menu = new Menu(Services);
+        }
+
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
@@ -121,10 +130,33 @@ namespace Keyboard_master
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            spriteBatch.Begin();
             // TODO: Add your drawing code here
+            switch (CurrState)
+            {
+                case GameState.MENU:
+                    menu.Draw(gameTime, spriteBatch);
+                    break;
+                case GameState.LEVEL:
+                    //TODO
+                    break;
+                case GameState.LEVEL_TO_MENU:
+                    //TODO
+                    break;
+                case GameState.MENU_TO_LEVEL:
+                    //TODO
+                    break;
+                case GameState.MENU_TO_MENU:
+                    //TODO
+                    break;
+                default:
+                    //IF IT GETS HERE, SOMETHING IS VERY BROKEN :(
+                    break;
+            }
+            spriteBatch.End();
 
             base.Draw(gameTime);
+
         }
     }
 }
