@@ -25,6 +25,9 @@ namespace Keyboard_master
             MENU_TO_MENU
         };
 
+        Menu menu;
+        Menu lastMenu;
+
         GameState CurrState;
         
 

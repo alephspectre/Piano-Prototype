@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\nlintz\Documents\Software Development\ImagineCup\PianoPrototype\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_masterContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\nlintz\Documents\Software Development\ImagineCup\PianoPrototype\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_master\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\nlintz\Documents\Software Development\ImagineCup\PianoPrototype\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_masterContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\nlintz\Documents\Software Development\ImagineCup\PianoPrototype\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_master\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2011-11-16T14:26:44.4526604-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

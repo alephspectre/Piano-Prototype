@@ -11,6 +11,10 @@ namespace Keyboard_master
 {
     class Menu : IDisposable
     {
+        public Menu(IServiceProvider serviceProvider)
+        {
+            content = new ContentManager(serviceProvider, "Content");
+        }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
