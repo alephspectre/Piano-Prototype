@@ -1,6 +1,0 @@
-c:\users\nlintz\documents\visual studio 2010\Projects\KeyboardMaster\KeyboardMaster\KeyboardMaster\bin\x86\Debug\KeyboardMaster.exe
-c:\users\nlintz\documents\visual studio 2010\Projects\KeyboardMaster\KeyboardMaster\KeyboardMaster\bin\x86\Debug\KeyboardMaster.pdb
-c:\users\nlintz\documents\visual studio 2010\Projects\KeyboardMaster\KeyboardMaster\KeyboardMaster\obj\x86\Debug\ResolveAssemblyReference.cache
-c:\users\nlintz\documents\visual studio 2010\Projects\KeyboardMaster\KeyboardMaster\KeyboardMaster\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-c:\users\nlintz\documents\visual studio 2010\Projects\KeyboardMaster\KeyboardMaster\KeyboardMaster\obj\x86\Debug\KeyboardMaster.exe
-c:\users\nlintz\documents\visual studio 2010\Projects\KeyboardMaster\KeyboardMaster\KeyboardMaster\obj\x86\Debug\KeyboardMaster.pdb
