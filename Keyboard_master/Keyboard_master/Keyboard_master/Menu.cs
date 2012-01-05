@@ -11,12 +11,12 @@ namespace Keyboard_master
 {
     class Menu : IDisposable
     {
-        private Texture2D background;
+        protected Texture2D background;
 
         public Menu(IServiceProvider serviceProvider)
         {
             content = new ContentManager(serviceProvider, "Content");
-            background = Content.Load<Texture2D>("Images/Main_Menu_Placeholder");
+            
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
