@@ -5,3 +5,10 @@ C:\Users\nlintz\Documents\Software Development\ImagineCup\PianoPrototype\Piano-P
 C:\Users\nlintz\Documents\Software Development\ImagineCup\PianoPrototype\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_master\obj\x86\Debug\Keyboard_master.exe
 C:\Users\nlintz\Documents\Software Development\ImagineCup\PianoPrototype\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_master\obj\x86\Debug\Keyboard_master.pdb
 C:\Users\nlintz\Documents\Software Development\ImagineCup\PianoPrototype\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_master\bin\x86\Debug\Content\Images\Main_Menu_Placeholder.xnb
+C:\Users\Julian Ceipek\Desktop\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_master\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Julian Ceipek\Desktop\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_master\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Julian Ceipek\Desktop\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_master\obj\x86\Debug\Keyboard_master.exe
+C:\Users\Julian Ceipek\Desktop\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_master\bin\x86\Debug\Content\Images\Main_Menu_Placeholder.xnb
+C:\Users\Julian Ceipek\Desktop\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_master\bin\x86\Debug\Keyboard_master.exe
+C:\Users\Julian Ceipek\Desktop\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_master\bin\x86\Debug\Keyboard_master.pdb
+C:\Users\Julian Ceipek\Desktop\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_master\obj\x86\Debug\Keyboard_master.pdb

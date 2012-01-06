@@ -22,7 +22,7 @@ namespace Keyboard_master
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             
-            spriteBatch.Draw(background, Vector2.Zero, Color.White);
+            spriteBatch.Draw(this.background, Vector2.Zero, Color.White);
         }
 
         public void Update(GameTime gameTime)

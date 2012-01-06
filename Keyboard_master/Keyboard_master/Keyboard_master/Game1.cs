@@ -120,7 +120,7 @@ namespace Keyboard_master
 
         private void LoadMainMenu()
         {
-            menu = new Menu(Services);
+            menu = new MainMenu(Services);
         }
 
         /// <summary>

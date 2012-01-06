@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nlintz\Documents\Software Development\ImagineCup\PianoPrototype\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_master\bin\x86\Debug\Content\Images\Main_Menu_Placeholder.xnb</Output>
-      <Time>2012-01-05T15:54:19.1205867-05:00</Time>
+      <Output>C:\Users\Julian Ceipek\Desktop\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_master\bin\x86\Debug\Content\Images\Main_Menu_Placeholder.xnb</Output>
+      <Time>2012-01-05T16:05:05.4401406-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -16,10 +16,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\nlintz\Documents\Software Development\ImagineCup\PianoPrototype\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_masterContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\nlintz\Documents\Software Development\ImagineCup\PianoPrototype\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_master\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\nlintz\Documents\Software Development\ImagineCup\PianoPrototype\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_masterContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\nlintz\Documents\Software Development\ImagineCup\PianoPrototype\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_master\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Julian Ceipek\Desktop\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_masterContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Julian Ceipek\Desktop\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_master\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Julian Ceipek\Desktop\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_masterContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Julian Ceipek\Desktop\Piano-Prototype\Keyboard_master\Keyboard_master\Keyboard_master\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -48,7 +48,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2011-11-16T14:26:44.4526604-05:00</Value>
+        <Value>2011-12-31T02:46:30.3303048-05:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
