@@ -25,10 +25,12 @@ namespace Keyboard_master
             MENU_TO_MENU
         };
 
-        Menu menu;
-        Menu lastMenu;
+        Screen activeScreen;
+        Screen lastScreen;
 
-        GameState CurrState;
+        double transitionCounter; //Used in transitions between states. Switch happens when timer reaches 0.
+
+        GameState currState;
         
 
         GraphicsDeviceManager graphics;
@@ -48,12 +50,15 @@ namespace Keyboard_master
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-            CurrState = GameState.MENU;
+            //Initial Screen resolution
             graphics.PreferredBackBufferWidth = 1280;
             graphics.PreferredBackBufferHeight = 720;
-            graphics.IsFullScreen = false;
+            graphics.IsFullScreen = false; // TODO: Switch to true when exiting is supported
             graphics.ApplyChanges();
+
+            currState = GameState.MENU;
+            transitionCounter = 0.0d;
+
             base.Initialize();
         }
 
@@ -92,22 +97,41 @@ namespace Keyboard_master
 
             // TODO: Add your update logic here
 
-            switch (CurrState)
+            switch (currState)
             {
                 case GameState.MENU:
-                    menu.Update(gameTime);
+                    activeScreen.Update(gameTime);
                     break;
                 case GameState.LEVEL:
                     //TODO
                     break;
                 case GameState.LEVEL_TO_MENU:
                     //TODO
+                    UpdateTransitionCounter(gameTime);
+                    if (transitionCounter <= 0.0d)
+                    {
+                        
+                        //Dispose();
+                        lastScreen = null;
+                    }
                     break;
                 case GameState.MENU_TO_LEVEL:
                     //TODO
+                    UpdateTransitionCounter(gameTime);
+                    if (transitionCounter <= 0.0d)
+                    {
+                        lastScreen.Dispose();
+                        lastScreen = null;
+                    }
                     break;
                 case GameState.MENU_TO_MENU:
                     //TODO
+                    UpdateTransitionCounter(gameTime);
+                    if (transitionCounter <= 0.0d)
+                    {
+                        lastScreen.Dispose();
+                        lastScreen = null;
+                    }
                     break;
                 default:
                     //IF IT GETS HERE, SOMETHING IS VERY BROKEN :(
@@ -118,9 +142,55 @@ namespace Keyboard_master
             base.Update(gameTime);
         }
 
+        private void UpdateTransitionCounter(GameTime gameTime)
+        {
+            transitionCounter -= gameTime.ElapsedGameTime.TotalMilliseconds;
+        }
+
         private void LoadMainMenu()
         {
-            menu = new MainMenu(Services);
+            activeScreen = new MainMenu(this, Services);
+        }
+
+        private bool SetTransitionToMenuWithDuration(Menu newMenu, double duration)
+        {
+            // Sets currState appropriately; Returns whether transition is valid
+            switch (currState)
+            {
+                case GameState.LEVEL:
+                    currState = GameState.MENU_TO_MENU;
+                    break;
+                case GameState.MENU:
+                    currState = GameState.LEVEL_TO_MENU;
+                    break;
+                default:
+                    //Unable to transition
+#if DEBUG
+                    Console.WriteLine("Menu transition attempted unsuccessfully");
+#endif
+                    return false;
+            }
+
+            //For all transitions
+            lastScreen = activeScreen;
+            activeScreen = newMenu;
+            return true;
+        }
+
+        public void SwitchToMainMenu() //Only switches if game is in level or other menu
+        {
+#if DEBUG
+            Console.WriteLine("Attempting transition to Settings Menu");
+#endif
+            SetTransitionToMenuWithDuration(new MainMenu(this, Services), 500.0d); // .5 second transition    
+        }
+
+        public void SwitchToSettingsMenu() //Only switches if game is in level or other menu
+        {
+#if DEBUG
+            Console.WriteLine("Attempting transition to Main Menu");
+#endif
+            SetTransitionToMenuWithDuration(new SettingsMenu(this, Services), 500.0d); // .5 second transition    
         }
 
         /// <summary>
@@ -129,13 +199,14 @@ namespace Keyboard_master
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
             // TODO: Add your drawing code here
-            switch (CurrState)
+            switch (currState)
             {
                 case GameState.MENU:
-                    menu.Draw(gameTime, spriteBatch);
+                    activeScreen.Draw(gameTime, spriteBatch);
                     break;
                 case GameState.LEVEL:
                     //TODO

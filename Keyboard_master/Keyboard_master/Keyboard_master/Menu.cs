@@ -2,46 +2,31 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System.Text;
 
 
 namespace Keyboard_master
 {
-    class Menu : IDisposable
+    class Menu : Screen
     {
         protected Texture2D background;
 
-        public Menu(IServiceProvider serviceProvider)
+
+        public Menu(Game1 game, IServiceProvider serviceProvider): base(game, serviceProvider)
         {
-            content = new ContentManager(serviceProvider, "Content");
-            
+
         }
 
-        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             
             spriteBatch.Draw(this.background, Vector2.Zero, Color.White);
         }
 
-        public void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
         
         }
-
-        public ContentManager Content 
-        {
-            get { return content; }  
-        }
-        ContentManager content;
-
-        public void Dispose()
-        {
-            Content.Unload();
-        }
-
-
-
     }
 }
