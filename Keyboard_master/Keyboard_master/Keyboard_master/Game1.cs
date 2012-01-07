@@ -16,7 +16,7 @@ namespace Keyboard_master
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
-        enum GameState
+        enum GameState // XXX: May actually only need two states. Address this again later
         {
             MENU,
             LEVEL,
@@ -108,30 +108,14 @@ namespace Keyboard_master
                 case GameState.LEVEL_TO_MENU:
                     //TODO
                     UpdateTransitionCounter(gameTime);
-                    if (transitionCounter <= 0.0d)
-                    {
-                        
-                        //Dispose();
-                        lastScreen = null;
-                    }
                     break;
                 case GameState.MENU_TO_LEVEL:
                     //TODO
                     UpdateTransitionCounter(gameTime);
-                    if (transitionCounter <= 0.0d)
-                    {
-                        lastScreen.Dispose();
-                        lastScreen = null;
-                    }
                     break;
                 case GameState.MENU_TO_MENU:
                     //TODO
                     UpdateTransitionCounter(gameTime);
-                    if (transitionCounter <= 0.0d)
-                    {
-                        lastScreen.Dispose();
-                        lastScreen = null;
-                    }
                     break;
                 default:
                     //IF IT GETS HERE, SOMETHING IS VERY BROKEN :(
@@ -145,6 +129,11 @@ namespace Keyboard_master
         private void UpdateTransitionCounter(GameTime gameTime)
         {
             transitionCounter -= gameTime.ElapsedGameTime.TotalMilliseconds;
+            if (transitionCounter <= 0.0d)
+            {
+                lastScreen.Dispose();
+                lastScreen = null;
+            }
         }
 
         private void LoadMainMenu()
@@ -174,6 +163,9 @@ namespace Keyboard_master
             //For all transitions
             lastScreen = activeScreen;
             activeScreen = newMenu;
+
+            lastScreen.BeginTransitionOut(duration);
+            activeScreen.BeginTransitionIn(duration);
             return true;
         }
 

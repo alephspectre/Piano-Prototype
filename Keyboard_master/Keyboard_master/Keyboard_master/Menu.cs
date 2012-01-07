@@ -12,7 +12,6 @@ namespace Keyboard_master
     {
         protected Texture2D background;
 
-
         public Menu(Game1 game, IServiceProvider serviceProvider): base(game, serviceProvider)
         {
 
