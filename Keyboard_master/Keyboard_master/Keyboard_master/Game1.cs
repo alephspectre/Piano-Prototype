@@ -53,12 +53,9 @@ namespace Keyboard_master
         protected override void Initialize()
         {
             //Initial Screen resolution
-            Dimensions.Initialize(1280, 720);
+            Dimensions.Initialize(1280, 720, false);
 
-            graphics.PreferredBackBufferWidth = Dimensions.Width;
-            graphics.PreferredBackBufferHeight = Dimensions.Height;
-            graphics.IsFullScreen = true; // TODO: Switch to true when exiting is supported
-            graphics.ApplyChanges();
+            ConfirmScreenDimensions();
 
             currState = GameState.MENU;
             transitionCounter = 0.0d;

@@ -56,13 +56,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Songs\MaryHadALittleLamb\meta.txt">
+    <None Include="Songs\MaryHadALittleLamb\meta.txt">
       <Name>meta</Name>
-    </Compile>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Images\SongIconNotFound.png">
       <Name>SongIconNotFound</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\MainMenuPlaceholder2.png">
+      <Name>MainMenuPlaceholder2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

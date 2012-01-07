@@ -31,6 +31,16 @@ namespace Keyboard_master
                     //Escape down
                     screen.ProcessNavigationCommand(NavigationCommand.BACK);
                 }
+                if (HasCmpKeyDownChanged(newState, Keys.Left))
+                {
+                    //Escape down
+                    screen.ProcessNavigationCommand(NavigationCommand.LEFT);
+                }
+                if (HasCmpKeyDownChanged(newState, Keys.Right))
+                {
+                    //Escape down
+                    screen.ProcessNavigationCommand(NavigationCommand.RIGHT);
+                }
             }
         
         }

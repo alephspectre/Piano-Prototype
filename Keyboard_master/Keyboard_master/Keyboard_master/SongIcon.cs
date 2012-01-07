@@ -19,12 +19,14 @@ namespace Keyboard_master
     {
         private Texture2D artwork;
         private Vector2 centerPos;
+        float size;
 
-        public SongIcon(IServiceProvider serviceProvider, Vector2 centerPos)
+        public SongIcon(IServiceProvider serviceProvider, Vector2 centerPos, float size)
         {
             content = new ContentManager(serviceProvider, "Content");
             this.artwork = Content.Load<Texture2D>("Images/SongIconNotFound");
             this.centerPos = centerPos;
+            this.size = size;
         }
 
         public ContentManager Content
@@ -40,7 +42,15 @@ namespace Keyboard_master
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(this.artwork, centerPos, Color.White);
+            spriteBatch.Draw(this.artwork,
+                             this.centerPos,
+                             this.artwork.Bounds,
+                             Color.White,
+                             0.0f,
+                             new Vector2(this.artwork.Bounds.Width / 2.0f, this.artwork.Bounds.Height / 2.0f),
+                             new Vector2(this.size, this.size),
+                             SpriteEffects.None,
+                             0);
         }
 
         public void Update(GameTime gameTime)

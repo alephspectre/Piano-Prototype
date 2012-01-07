@@ -3,7 +3,10 @@
 
     enum NavigationCommand
     {
-        BACK
+        BACK,
+        LEFT,
+        RIGHT,
+        SELECT
     };
 
 }
