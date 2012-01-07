@@ -41,6 +41,7 @@ namespace Keyboard_master
                     //Escape down
                     screen.ProcessNavigationCommand(NavigationCommand.RIGHT);
                 }
+                oldCmpKeyboardState = newState;
             }
         
         }
