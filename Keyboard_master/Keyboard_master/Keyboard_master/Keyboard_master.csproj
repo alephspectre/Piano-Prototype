@@ -107,6 +107,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InputSymbols.cs" />
     <Compile Include="InputHandler.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="MainMenu.cs" />

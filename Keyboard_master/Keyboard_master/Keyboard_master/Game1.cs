@@ -31,6 +31,8 @@ namespace Keyboard_master
         double transitionCounter; //Used in transitions between states. Switch happens when timer reaches 0.
 
         GameState currState;
+
+        InputHandler inputHandler;
         
 
         GraphicsDeviceManager graphics;
@@ -53,11 +55,12 @@ namespace Keyboard_master
             //Initial Screen resolution
             graphics.PreferredBackBufferWidth = 1280;
             graphics.PreferredBackBufferHeight = 720;
-            graphics.IsFullScreen = false; // TODO: Switch to true when exiting is supported
+            graphics.IsFullScreen = true; // TODO: Switch to true when exiting is supported
             graphics.ApplyChanges();
 
             currState = GameState.MENU;
             transitionCounter = 0.0d;
+            inputHandler = new InputHandler();
 
             base.Initialize();
         }
@@ -91,11 +94,9 @@ namespace Keyboard_master
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
-
             // TODO: Add your update logic here
+
+            inputHandler.UpdateHandlerForScreen(activeScreen);
 
             switch (currState)
             {
@@ -183,6 +184,11 @@ namespace Keyboard_master
             Console.WriteLine("Attempting transition to Main Menu");
 #endif
             SetTransitionToMenuWithDuration(new SettingsMenu(this, Services), 500.0d); // .5 second transition    
+        }
+
+        public void QuitGame()
+        {
+            this.Exit();
         }
 
         /// <summary>

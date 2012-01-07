@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using InputSymbols;
 
 namespace Keyboard_master
 {
@@ -23,6 +24,11 @@ namespace Keyboard_master
         public override void Update(GameTime gameTime)
         {
         
+        }
+
+        public override void ProcessNavigationCommand(NavigationCommand cmd)
+        {
+
         }
 
     }

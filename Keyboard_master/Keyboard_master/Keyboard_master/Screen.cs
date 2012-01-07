@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using InputSymbols;
 
 namespace Keyboard_master
 {
@@ -52,6 +53,7 @@ namespace Keyboard_master
             this.transitionState = TransitionState.OUT;
         }
 
+        public abstract void ProcessNavigationCommand(NavigationCommand cmd);
         public abstract void Draw(GameTime gameTime, SpriteBatch spriteBatch);
         public abstract void Update(GameTime gameTime);
 
