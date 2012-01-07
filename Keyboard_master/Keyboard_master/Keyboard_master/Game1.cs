@@ -53,8 +53,10 @@ namespace Keyboard_master
         protected override void Initialize()
         {
             //Initial Screen resolution
-            graphics.PreferredBackBufferWidth = 1280;
-            graphics.PreferredBackBufferHeight = 720;
+            Dimensions.Initialize(1280, 720);
+
+            graphics.PreferredBackBufferWidth = Dimensions.Width;
+            graphics.PreferredBackBufferHeight = Dimensions.Height;
             graphics.IsFullScreen = true; // TODO: Switch to true when exiting is supported
             graphics.ApplyChanges();
 
@@ -168,6 +170,14 @@ namespace Keyboard_master
             lastScreen.BeginTransitionOut(duration);
             activeScreen.BeginTransitionIn(duration);
             return true;
+        }
+
+        public void ConfirmScreenDimensions()
+        {
+            graphics.PreferredBackBufferWidth = Dimensions.Width;
+            graphics.PreferredBackBufferHeight = Dimensions.Height;
+            graphics.IsFullScreen = Dimensions.FullScreen;
+            graphics.ApplyChanges();
         }
 
         public void SwitchToMainMenu() //Only switches if game is in level or other menu

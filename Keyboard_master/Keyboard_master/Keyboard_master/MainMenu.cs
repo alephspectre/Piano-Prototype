@@ -12,7 +12,7 @@ namespace Keyboard_master
     {
         public MainMenu(Game1 game, IServiceProvider serviceProvider) : base(game, serviceProvider)
         {
-            background = Content.Load<Texture2D>("Images/Main_Menu_Placeholder");
+            background = Content.Load<Texture2D>("Images/MainMenuPlaceholder");
         }
 
         public override void ProcessNavigationCommand(NavigationCommand cmd)

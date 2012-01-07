@@ -42,8 +42,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Images\Main_Menu_Placeholder.png">
-      <Name>Main_Menu_Placeholder</Name>
+    <Compile Include="Images\MainMenuPlaceholder.png">
+      <Name>MainMenuPlaceholder</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Songs\MaryHadALittleLamb\art.png">
+      <Name>art</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Songs\MaryHadALittleLamb\meta.txt">
+      <Name>meta</Name>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Images\SongIconNotFound.png">
+      <Name>SongIconNotFound</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

@@ -107,6 +107,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dimensions.cs" />
     <Compile Include="InputSymbols.cs" />
     <Compile Include="InputHandler.cs" />
     <Compile Include="Level.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="Screen.cs" />
     <Compile Include="SettingsMenu.cs" />
+    <Compile Include="SongIcon.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
