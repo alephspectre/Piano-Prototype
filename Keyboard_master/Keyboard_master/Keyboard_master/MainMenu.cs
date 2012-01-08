@@ -25,9 +25,12 @@ namespace Keyboard_master
             this.songIndex = 1;
 
             this.songs = new List<SongIcon>();
-            this.songs.Add(new SongIcon(serviceProvider));
-            this.songs.Add(new SongIcon(serviceProvider));
-            this.songs.Add(new SongIcon(serviceProvider));
+
+            for (int i = 0; i < 7; i++)
+            {
+                this.songs.Add(new SongIcon(serviceProvider));
+            }
+
         }
 
         public override void ProcessNavigationCommand(NavigationCommand cmd)
@@ -38,7 +41,8 @@ namespace Keyboard_master
             } 
             else if (cmd == NavigationCommand.LEFT)
             {
-                this.songIndex = (this.songIndex - 1) % songs.Count;
+                // C# uses a completely non-standard modulus operator, which accounts for the following:
+                this.songIndex = (this.songIndex + songs.Count - 1) % songs.Count;
             } 
             else if (cmd == NavigationCommand.RIGHT)
             {
@@ -54,7 +58,7 @@ namespace Keyboard_master
                 this.songs[this.songIndex - 1].Draw(gameTime, spriteBatch, this.leftIconPos, 0.7f);
             }
 
-            this.songs[this.songIndex].Draw(gameTime, spriteBatch, this.centerIconPos, 1.0f);
+                this.songs[this.songIndex].Draw(gameTime, spriteBatch, this.centerIconPos, 1.0f);
             
             if (this.songIndex + 1 < songs.Count)
             {
