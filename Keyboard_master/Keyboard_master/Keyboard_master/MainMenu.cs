@@ -54,7 +54,7 @@ namespace Keyboard_master
                 this.songs[this.songIndex - 1].Draw(gameTime, spriteBatch, this.leftIconPos, 0.7f);
             }
 
-                this.songs[this.songIndex].Draw(gameTime, spriteBatch, this.centerIconPos, 1.0f);
+            this.songs[this.songIndex].Draw(gameTime, spriteBatch, this.centerIconPos, 1.0f);
             
             if (this.songIndex + 1 < songs.Count)
             {
