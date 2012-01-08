@@ -15,18 +15,19 @@ namespace Keyboard_master
     //     the song: the name, artist, level of difficulty, and top score (for the current profile?)
     //     After it has been active for a while (maybe .5 sec), it should start playing the associated 
     //     music.
+    //     SongIcons don't have absolute positions, but rather offsets used for animation.
     class SongIcon: IDisposable
     {
         private Texture2D artwork;
-        private Vector2 centerPos;
-        float size;
+        private Vector2 posOffset;
+        private float sizeOffset;
 
-        public SongIcon(IServiceProvider serviceProvider, Vector2 centerPos, float size)
+        public SongIcon(IServiceProvider serviceProvider)
         {
             content = new ContentManager(serviceProvider, "Content");
             this.artwork = Content.Load<Texture2D>("Images/SongIconNotFound");
-            this.centerPos = centerPos;
-            this.size = size;
+            this.posOffset = Vector2.Zero;
+            this.sizeOffset = 0.0f;
         }
 
         public ContentManager Content
@@ -40,15 +41,16 @@ namespace Keyboard_master
             Content.Unload();
         }
 
-        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        public void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 absPos, float absSize)
         {
             spriteBatch.Draw(this.artwork,
-                             this.centerPos,
+                             absPos,
                              this.artwork.Bounds,
                              Color.White,
                              0.0f,
-                             new Vector2(this.artwork.Bounds.Width / 2.0f, this.artwork.Bounds.Height / 2.0f),
-                             new Vector2(this.size, this.size),
+                             new Vector2(this.artwork.Bounds.Width / 2.0f + this.posOffset.X,
+                                         this.artwork.Bounds.Height / 2.0f + this.posOffset.Y),
+                             new Vector2(absSize + this.sizeOffset, absSize + this.sizeOffset),
                              SpriteEffects.None,
                              0);
         }
