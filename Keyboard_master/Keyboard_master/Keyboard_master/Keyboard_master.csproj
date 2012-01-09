@@ -121,6 +121,7 @@
     <Compile Include="Screen.cs" />
     <Compile Include="SettingsMenu.cs" />
     <Compile Include="SongIcon.cs" />
+    <Compile Include="SongInfoBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

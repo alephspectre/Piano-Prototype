@@ -54,6 +54,7 @@ namespace Keyboard_master
         {
             //Initial Screen resolution
             Dimensions.Initialize(1280, 720, false);
+            //Dimensions.Initialize(640, 480, false);
 
             ConfirmScreenDimensions();
 

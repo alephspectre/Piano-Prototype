@@ -53,23 +53,6 @@ namespace Keyboard_master
             this.HasCompleted = false;
         }
 
-        // Summary:
-        //     Make sure that the animation gets marked as finished or loops properly
-        private void CompleteWithTarget(IAnimatable target)
-        {
-            //These two lines fix overshoot
-            this.remainingDuration = 0.0d;
-            ComputeUpdateOnTarget(target);
-
-            if (this.Loop)
-            {
-                this.remainingDuration = this.totalDuration;
-            }
-            else
-            {
-                this.HasCompleted = true;
-            }
-        }
 
         // Summary:
         //     Ignore loop flag and force instant completion
@@ -110,12 +93,19 @@ namespace Keyboard_master
             {
                 if (this.remainingDuration > 0.0d)
                 {
-                    this.remainingDuration -= gameTime.ElapsedGameTime.TotalMilliseconds;
+                    this.remainingDuration = Math.Max(this.remainingDuration - gameTime.ElapsedGameTime.TotalMilliseconds, 0.0d);
                     ComputeUpdateOnTarget(target);
                 }
                 else
                 {
-                    CompleteWithTarget(target);
+                    if (this.Loop)
+                    {
+                        this.remainingDuration = this.totalDuration;
+                    }
+                    else
+                    {
+                        this.HasCompleted = true;
+                    }
                 }
             }
         }

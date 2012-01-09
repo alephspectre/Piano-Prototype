@@ -17,6 +17,12 @@ namespace Keyboard_master
         private Vector2 leftIconPos = new Vector2(Dimensions.Width / 5.0f, Dimensions.Height / 2.0f);
         private Vector2 centerIconPos = Dimensions.Center;
         private Vector2 rightIconPos = new Vector2(Dimensions.Width * 4.0f / 5.0f, Dimensions.Height / 2.0f);
+        private Vector2 songInfoPos = new Vector2(Dimensions.Width/2.0f, Dimensions.Height * 3.0f/4.0f);
+        private const String infoHeaders = "Title:\n" +
+                                           "Author:\n" +
+                                           "Level:\n" +
+                                           "Record:";
+        private Vector2 songInfoOrigin;
 
         public MainMenu(Game1 game, IServiceProvider serviceProvider) : base(game, serviceProvider)
         {
@@ -33,7 +39,11 @@ namespace Keyboard_master
                 this.songs.Add(new SongIcon(serviceProvider));
             }
 
+            this.songs.Add(new SongIcon(serviceProvider, "Songs/MaryHadALittleLamb/art")); // XXX: Hardcoded for now
+
             this.songs[this.songIndex].AddAnimation(new Animation(AnimationType.BOUNCE_SIZE, 0.15f, 700.0f, true));
+
+            songInfoOrigin = new Vector2(this.font.MeasureString(infoHeaders).X,0.0f);// + new Vector2(Dimensions.Width/2.0f, Dimensions.Height/10.0f);
 
         }
 
@@ -69,6 +79,9 @@ namespace Keyboard_master
             }
 
                 this.songs[this.songIndex].Draw(gameTime, spriteBatch, this.centerIconPos, 1.0f);
+                spriteBatch.DrawString(this.font, infoHeaders, this.songInfoPos, Color.Black, 0.0f, songInfoOrigin, 1.0f, SpriteEffects.None, 0);
+
+            //Adds a string to a batch of sprites for rendering using the specified font, text, position, color, rotation, origin, scale, effects and layer.
             
             if (this.songIndex + 1 < songs.Count)
             {

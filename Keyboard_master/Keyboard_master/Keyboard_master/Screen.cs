@@ -21,6 +21,7 @@ namespace Keyboard_master
         protected Game1 game;
         protected double transitionDuration; // Only used during a transition; set when begin In/Out
         protected TransitionState transitionState;
+        protected SpriteFont font;
 
         public Screen(Game1 game, IServiceProvider serviceProvider)
         {
@@ -28,6 +29,7 @@ namespace Keyboard_master
             content = new ContentManager(serviceProvider, "Content");
             this.transitionDuration = 0.0f;
             this.transitionState = TransitionState.NONE;
+            this.font = Content.Load<SpriteFont>("Fonts/Classica/Classica");
         }
 
         public ContentManager Content

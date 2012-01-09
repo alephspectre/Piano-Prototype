@@ -2,54 +2,46 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Specialized;
+using System.Collections;
 
 namespace Keyboard_master
 {
-
-    // Summary:
-    //     A SongIcon is a menu item that allows a song to be selected.
-    //     It displays an image for the selected song and stores information associated with
-    //     the song: the name, artist, level of difficulty, and top score (for the current profile?)
-    //     After it has been active for a while (maybe .5 sec), it should start playing the associated 
-    //     music.
-    //     SongIcons don't have absolute positions, but rather offsets used for animation.
-    class SongIcon: IDisposable, IAnimatable
+    class SongInfoBox: IAnimatable
     {
-        private Texture2D artwork;
         private Vector2 posOffset;
         private float sizeOffset;
         private Color tint;
+        private SpriteFont font;
 
         private List<Animation> animations;
 
-        public SongIcon(IServiceProvider serviceProvider, String imageName = "Images/SongIconNotFound")
-        {
-            content = new ContentManager(serviceProvider, "Content");
-            this.artwork = Content.Load<Texture2D>(imageName);
-            this.posOffset = Vector2.Zero;
-            this.sizeOffset = 0.0f;
-            this.animations = new List<Animation>();
-            this.tint = new Color(255, 255, 255, 255);
-        }
+        private OrderedDictionary entries;
 
-        public ContentManager Content
+        public SongInfoBox(SpriteFont font)
         {
-            get { return content; }
-        }
-        ContentManager content;
-
-        public void Dispose()
-        {
-            Content.Unload();
+            this.font = font;
+            entries = new OrderedDictionary();
+            entries.Add("Title:", "None");
+            entries.Add("Author:", "None");
+            entries.Add("Level:", "None");
+            entries.Add("Record:", "None");
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 absPos, float absSize)
         {
+            /*
             absSize = absSize * Dimensions.Height / 720.0f; // For Widescreen resolution independence. 
-                                                            // XXX: Resolution Independence is currently seroiusly broken, especially for other ratios 
+            // XXX: Resolution Independence is currently seroiusly broken, especially for other ratios 
+
+            foreach (DictionaryEntry entry in entries)
+            {
+                
+            }
+
+            spriteBatch.DrawString(this.font, infoHeaders, this.songInfoPos, Color.Black, 0.0f, songInfoOrigin, 1.0f, SpriteEffects.None, 0);
             spriteBatch.Draw(this.artwork,
                              absPos,
                              this.artwork.Bounds,
@@ -60,6 +52,7 @@ namespace Keyboard_master
                              new Vector2(absSize + this.sizeOffset, absSize + this.sizeOffset),
                              SpriteEffects.None,
                              0);
+             */
         }
 
         public void Update(GameTime gameTime)
@@ -91,7 +84,7 @@ namespace Keyboard_master
         {
             List<int> animationIndicesToRemove = new List<int>(); //Could be optimized by making it an instance var, but not necessary unless speed problem
 
-            for (int i = 0; i < this.animations.Count; i++ )
+            for (int i = 0; i < this.animations.Count; i++)
             {
                 if (this.animations[i].HasCompleted)
                 {
@@ -122,6 +115,5 @@ namespace Keyboard_master
             }
             this.animations.Clear();
         }
-
     }
 }
