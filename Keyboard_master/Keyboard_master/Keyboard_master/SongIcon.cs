@@ -23,7 +23,7 @@ namespace Keyboard_master
         private float sizeOffset;
         private Color tint;
 
-        public List<Animation> animations;
+        private List<Animation> animations;
 
         public SongIcon(IServiceProvider serviceProvider)
         {
@@ -107,7 +107,12 @@ namespace Keyboard_master
             }
         }
 
-        public void TerminateAnimations()
+        public void AddAnimation(Animation animation)
+        {
+            this.animations.Add(animation);
+        }
+
+        public void TerminateAllAnimations()
         {
             foreach (Animation anim in this.animations)
             {

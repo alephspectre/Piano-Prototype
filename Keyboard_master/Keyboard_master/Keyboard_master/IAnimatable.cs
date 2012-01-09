@@ -9,6 +9,8 @@ namespace Keyboard_master
     interface IAnimatable
     {
         void UpdateAnimations(GameTime gameTime);
+        void TerminateAllAnimations();
+        void AddAnimation(Animation animation);
 
         void SetPosX(float x);
         void SetPosY(float y);
