@@ -16,11 +16,14 @@ namespace Keyboard_master
     //     After it has been active for a while (maybe .5 sec), it should start playing the associated 
     //     music.
     //     SongIcons don't have absolute positions, but rather offsets used for animation.
-    class SongIcon: IDisposable
+    class SongIcon: IDisposable, IAnimatable
     {
         private Texture2D artwork;
         private Vector2 posOffset;
         private float sizeOffset;
+        private Color tint;
+
+        public List<Animation> animations;
 
         public SongIcon(IServiceProvider serviceProvider)
         {
@@ -28,6 +31,8 @@ namespace Keyboard_master
             this.artwork = Content.Load<Texture2D>("Images/SongIconNotFound");
             this.posOffset = Vector2.Zero;
             this.sizeOffset = 0.0f;
+            this.animations = new List<Animation>();
+            this.tint = new Color(255, 255, 255, 255);
         }
 
         public ContentManager Content
@@ -46,7 +51,7 @@ namespace Keyboard_master
             spriteBatch.Draw(this.artwork,
                              absPos,
                              this.artwork.Bounds,
-                             Color.White,
+                             this.tint,
                              0.0f,
                              new Vector2(this.artwork.Bounds.Width / 2.0f + this.posOffset.X,
                                          this.artwork.Bounds.Height / 2.0f + this.posOffset.Y),
@@ -57,9 +62,59 @@ namespace Keyboard_master
 
         public void Update(GameTime gameTime)
         {
-
+            UpdateAnimations(gameTime);
         }
 
+        public void SetPosX(float x)
+        {
+            this.posOffset.X = x;
+        }
+
+        public void SetPosY(float y)
+        {
+            this.posOffset.Y = y;
+        }
+
+        public void SetScale(float s)
+        {
+            this.sizeOffset = s;
+        }
+
+        public void SetOpacity(byte o)
+        {
+            this.tint.A = o;
+        }
+
+        public void UpdateAnimations(GameTime gameTime)
+        {
+            List<int> animationIndicesToRemove = new List<int>(); //Could be optimized by making it an instance var, but not necessary unless speed problem
+
+            for (int i = 0; i < this.animations.Count; i++ )
+            {
+                if (this.animations[i].HasCompleted)
+                {
+                    animationIndicesToRemove.Add(i);
+                }
+                else
+                {
+                    this.animations[i].UpdateWithTarget(this, gameTime);
+                }
+            }
+
+            foreach (int animIndex in animationIndicesToRemove)
+            {
+                this.animations.RemoveAt(animIndex);
+            }
+        }
+
+        public void TerminateAnimations()
+        {
+            foreach (Animation anim in this.animations)
+            {
+                anim.ForceCompletionOnTarget(this);
+            }
+            this.animations.Clear();
+        }
 
     }
 }

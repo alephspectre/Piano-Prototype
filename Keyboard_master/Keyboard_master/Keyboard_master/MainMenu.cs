@@ -26,6 +26,8 @@ namespace Keyboard_master
 
             this.songs = new List<SongIcon>();
 
+
+            // TODO: SongIcons should be loaded from disk here (Nontrivial):
             for (int i = 0; i < 7; i++)
             {
                 this.songs.Add(new SongIcon(serviceProvider));
@@ -41,17 +43,23 @@ namespace Keyboard_master
             } 
             else if (cmd == NavigationCommand.LEFT)
             {
-                // C# uses a completely non-standard modulus operator, which accounts for the following:
+                this.songs[this.songIndex].TerminateAnimations();
+                // C# uses a completely non-standard modulus operator, which accounts for the following line:
                 this.songIndex = (this.songIndex + songs.Count - 1) % songs.Count;
+                // Note for porting to a different language: this will still work, but "this.songIndex = (this.songIndex - 1) % songs.Count" is shorter
+                this.songs[this.songIndex].animations.Add(new Animation(AnimationType.BOUNCE_SIZE, 0.15f, 700.0f, true));
             } 
             else if (cmd == NavigationCommand.RIGHT)
             {
+                this.songs[this.songIndex].TerminateAnimations();
                 this.songIndex = (this.songIndex + 1) % songs.Count;
+                this.songs[this.songIndex].animations.Add(new Animation(AnimationType.BOUNCE_SIZE, 0.15f, 700.0f, true));
             }
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
+            // TODO: Wrap around display of the carousel (does not depend on other changes)
             base.Draw(gameTime, spriteBatch);
 
             if (this.songIndex - 1 >= 0) {

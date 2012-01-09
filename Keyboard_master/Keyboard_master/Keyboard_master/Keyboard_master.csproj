@@ -107,6 +107,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAnimatable.cs" />
     <Compile Include="Animation.cs" />
     <Compile Include="Dimensions.cs" />
     <Compile Include="InputSymbols.cs" />
