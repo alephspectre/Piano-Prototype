@@ -78,7 +78,10 @@ namespace Keyboard_master
                     target.SetScale((1.0f + (float)Math.Sin(fractionCompleted + sinOffset)) * this.amplitude / 2.0f); // Scales from (0 to 1 to 0) * amplitude
                     break;
                 case AnimationType.FADE_OUT:
-                    target.SetOpacity((byte)((this.remainingDuration/this.totalDuration)*this.amplitude));
+                    target.SetOpacity((byte)((this.remainingDuration / this.totalDuration) * this.amplitude));
+                    break;
+                case AnimationType.FADE_IN:
+                    target.SetOpacity((byte)(((this.totalDuration-this.remainingDuration) / this.totalDuration) * this.amplitude));
                     break;
                 default:
                     Debug.Assert(false, "Unhandled Animation Type");

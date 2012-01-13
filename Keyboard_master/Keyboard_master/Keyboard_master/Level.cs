@@ -28,7 +28,10 @@ namespace Keyboard_master
 
         public override void ProcessNavigationCommand(NavigationCommand cmd)
         {
-
+            if (cmd == NavigationCommand.BACK)
+            {
+                game.SwitchToMainMenu();
+            } 
         }
 
     }

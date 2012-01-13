@@ -94,12 +94,25 @@ namespace Keyboard_master
 
         }
 
-        public override void BeginTransitionOut(double duration) {
+        public override void BeginTransitionIn(double duration)
+        {
+            base.BeginTransitionIn(duration);
             for (int i = this.songIndex - 1; i < this.songIndex + 2; i++)
             {
                 if (i >= 0 && i < this.songs.Count)
                 {
-                    this.songs[i].AddAnimation(new Animation(AnimationType.FADE_OUT, 1.0f, 1000.0d));
+                    this.songs[i].AddAnimation(new Animation(AnimationType.FADE_IN, 255.0f, duration));
+                }
+            }
+        }
+
+        public override void BeginTransitionOut(double duration) {
+            base.BeginTransitionOut(duration);
+            for (int i = this.songIndex - 1; i < this.songIndex + 2; i++)
+            {
+                if (i >= 0 && i < this.songs.Count)
+                {
+                    this.songs[i].AddAnimation(new Animation(AnimationType.FADE_OUT, 255.0f, duration));
                 }
             }
         }

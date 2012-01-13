@@ -108,10 +108,14 @@ namespace Keyboard_master
                     break;
                 case GameState.LEVEL_TO_MENU:
                     //TODO
+                    lastScreen.Update(gameTime);
+                    activeScreen.Update(gameTime);
                     UpdateTransitionCounter(gameTime);
                     break;
                 case GameState.MENU_TO_LEVEL:
                     //TODO
+                    lastScreen.Update(gameTime);
+                    activeScreen.Update(gameTime);
                     UpdateTransitionCounter(gameTime);
                     break;
                 case GameState.MENU_TO_MENU:
@@ -264,12 +268,18 @@ namespace Keyboard_master
                     break;
                 case GameState.LEVEL_TO_MENU:
                     //TODO
+                    lastScreen.Draw(gameTime, spriteBatch);
+                    activeScreen.Draw(gameTime, spriteBatch);
                     break;
                 case GameState.MENU_TO_LEVEL:
                     //TODO
+                    lastScreen.Draw(gameTime, spriteBatch);
+                    activeScreen.Draw(gameTime, spriteBatch);
                     break;
                 case GameState.MENU_TO_MENU:
                     //TODO
+                    lastScreen.Draw(gameTime, spriteBatch);
+                    activeScreen.Draw(gameTime, spriteBatch);
                     break;
                 default:
                     //IF IT GETS HERE, SOMETHING IS VERY BROKEN :(

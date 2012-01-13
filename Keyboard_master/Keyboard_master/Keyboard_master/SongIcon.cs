@@ -91,7 +91,7 @@ namespace Keyboard_master
         {
             List<int> animationIndicesToRemove = new List<int>(); //Could be optimized by making it an instance var, but not necessary unless speed problem
 
-            for (int i = 0; i < this.animations.Count; i++ )
+            for (int i = 0; i < this.animations.Count; i++)
             {
                 if (this.animations[i].HasCompleted)
                 {
