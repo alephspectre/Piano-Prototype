@@ -18,7 +18,9 @@ namespace Keyboard_master
         SLIDE_DOWN,
         BOUNCE_VERT,
         BOUNCE_HORIZ,
-        BOUNCE_SIZE
+        BOUNCE_SIZE,
+        FADE_OUT,
+        FADE_IN
     };
 
     class Animation
@@ -74,6 +76,9 @@ namespace Keyboard_master
                     double fractionCompleted = (this.totalDuration - this.remainingDuration) / this.totalDuration * 2.0d * Math.PI; // From 0 to 2PI
                     const double sinOffset = 3.0d / 2.0d * Math.PI;
                     target.SetScale((1.0f + (float)Math.Sin(fractionCompleted + sinOffset)) * this.amplitude / 2.0f); // Scales from (0 to 1 to 0) * amplitude
+                    break;
+                case AnimationType.FADE_OUT:
+                    target.SetOpacity((byte)((this.remainingDuration/this.totalDuration)*this.amplitude));
                     break;
                 default:
                     Debug.Assert(false, "Unhandled Animation Type");

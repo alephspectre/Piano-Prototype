@@ -134,6 +134,20 @@ namespace Keyboard_master
             {
                 lastScreen.Dispose();
                 lastScreen = null;
+                switch (currState) {
+                    case GameState.LEVEL_TO_MENU:
+                        currState = GameState.MENU;
+                        break;
+                    case GameState.MENU_TO_LEVEL:
+                        currState = GameState.LEVEL;
+                        break;
+                    case GameState.MENU_TO_MENU:
+                        currState = GameState.MENU;
+                        break;
+                    default:
+                        Console.WriteLine("Unhandled Transition Encountered when terminating transition");
+                        break;
+                }
             }
         }
 
@@ -148,10 +162,10 @@ namespace Keyboard_master
             switch (currState)
             {
                 case GameState.LEVEL:
-                    currState = GameState.MENU_TO_MENU;
+                    currState = GameState.LEVEL_TO_MENU;
                     break;
                 case GameState.MENU:
-                    currState = GameState.LEVEL_TO_MENU;
+                    currState = GameState.MENU_TO_MENU;
                     break;
                 default:
                     //Unable to transition
@@ -165,6 +179,7 @@ namespace Keyboard_master
             lastScreen = activeScreen;
             activeScreen = newMenu;
 
+            transitionCounter = duration;
             lastScreen.BeginTransitionOut(duration);
             activeScreen.BeginTransitionIn(duration);
             return true;
@@ -192,6 +207,36 @@ namespace Keyboard_master
             Console.WriteLine("Attempting transition to Main Menu");
 #endif
             SetTransitionToMenuWithDuration(new SettingsMenu(this, Services), 500.0d); // .5 second transition    
+        }
+
+        public void SwitchToLevel()
+        { 
+            //TODO: Integrate with actual game files so that we can load a different level
+#if DEBUG
+            Console.WriteLine("Attempting to transition to Debug Level; proper level not coded");
+#endif
+            // Sets currState appropriately; Returns whether transition is valid
+            switch (currState)
+            {
+                case GameState.MENU:
+                    currState = GameState.MENU_TO_LEVEL;
+                    break;
+                default:
+                    //Unable to transition
+#if DEBUG
+                    Console.WriteLine("Level transition attempted unsuccessfully");
+#endif
+                    return;
+            }
+
+            //For all transitions
+            lastScreen = activeScreen;
+            activeScreen = new Level(this, Services);
+
+            double transitionDuration = 500.0d;
+            transitionCounter = transitionDuration;
+            lastScreen.BeginTransitionOut(transitionDuration);
+            activeScreen.BeginTransitionIn(transitionDuration);
         }
 
         public void QuitGame()

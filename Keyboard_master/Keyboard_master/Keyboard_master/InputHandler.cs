@@ -33,13 +33,18 @@ namespace Keyboard_master
                 }
                 if (HasCmpKeyDownChanged(newState, Keys.Left))
                 {
-                    //Escape down
+                    //Left key
                     screen.ProcessNavigationCommand(NavigationCommand.LEFT);
                 }
                 if (HasCmpKeyDownChanged(newState, Keys.Right))
                 {
-                    //Escape down
+                    //Right key
                     screen.ProcessNavigationCommand(NavigationCommand.RIGHT);
+                }
+                if (HasCmpKeyDownChanged(newState, Keys.Enter))
+                {
+                    //Enter key
+                    screen.ProcessNavigationCommand(NavigationCommand.SELECT);
                 }
                 oldCmpKeyboardState = newState;
             }

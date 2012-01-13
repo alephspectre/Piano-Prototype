@@ -32,7 +32,7 @@ namespace Keyboard_master
             this.posOffset = Vector2.Zero;
             this.sizeOffset = 0.0f;
             this.animations = new List<Animation>();
-            this.tint = new Color(255, 255, 255, 255);
+            this.tint = new Color(255,255,255,255);
         }
 
         public ContentManager Content

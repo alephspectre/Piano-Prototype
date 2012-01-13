@@ -43,13 +43,13 @@ namespace Keyboard_master
             Content.Unload();
         }
 
-        public void BeginTransitionIn(double duration)
+        public virtual void BeginTransitionIn(double duration)
         {
             this.transitionDuration = duration; //milliseconds
             this.transitionState = TransitionState.IN;
         }
 
-        public void BeginTransitionOut(double duration)
+        public virtual void BeginTransitionOut(double duration)
         {
             this.transitionDuration = duration; //milliseconds
             this.transitionState = TransitionState.OUT;

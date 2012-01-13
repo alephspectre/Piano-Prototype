@@ -67,6 +67,10 @@ namespace Keyboard_master
                 this.songIndex = (this.songIndex + 1) % songs.Count;
                 this.songs[this.songIndex].AddAnimation(new Animation(AnimationType.BOUNCE_SIZE, 0.15f, 700.0f, true));
             }
+            else if (cmd == NavigationCommand.SELECT)
+            {
+                game.SwitchToLevel(); //TODO: Pass in selected song data as parameter(s)    
+            }
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -88,6 +92,16 @@ namespace Keyboard_master
                 this.songs[this.songIndex + 1].Draw(gameTime, spriteBatch, this.rightIconPos, 0.7f);
             }
 
+        }
+
+        public override void BeginTransitionOut(double duration) {
+            for (int i = this.songIndex - 1; i < this.songIndex + 2; i++)
+            {
+                if (i >= 0 && i < this.songs.Count)
+                {
+                    this.songs[i].AddAnimation(new Animation(AnimationType.FADE_OUT, 1.0f, 1000.0d));
+                }
+            }
         }
 
         public override void Update(GameTime gameTime)
